@@ -37,6 +37,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { ReqTechnicianComponent } from './req-technician/req-technician.component';
 import { TransactionsTechnicianComponent } from './transactions-technician/transactions-technician.component';
 import { DataTablesModule } from 'angular-datatables';
+import { NotificationsTechnicianComponent } from './notifications-technician/notifications-technician.component';
 
 @NgModule({
   declarations: [
@@ -57,6 +58,7 @@ import { DataTablesModule } from 'angular-datatables';
     SettingsTechnicianComponent,
     ReqTechnicianComponent,
     TransactionsTechnicianComponent,
+    NotificationsTechnicianComponent,
   ],
   imports: [
     BrowserModule,

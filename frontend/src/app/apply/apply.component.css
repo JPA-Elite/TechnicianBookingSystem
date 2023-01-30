@@ -1,39 +1,177 @@
 .first_div {
-    background:rgba(127, 255, 212, 0.3);
-    padding: 70px 90px 70px 90px;
-    
+  background: rgba(127, 255, 212, 0.3);
+  padding: 70px 90px 70px 90px;
+
 }
+
 /* <img src="https://hvacrcareerconnectny.com/wp-content/uploads/2019/11/HVACR_111419_BlogPost.png"> */
 .first_div .background_image {
-    width: 100%;
-    height: 400px;
-    position:relative;
-    
-    background-image: url('https://hvacrcareerconnectny.com/wp-content/uploads/2019/11/HVACR_111419_BlogPost.png');
-    background-repeat:no-repeat;
-    background-size:cover;
+  width: 100%;
+  height: 400px;
+  position: relative;
+
+  background-image: url('https://hvacrcareerconnectny.com/wp-content/uploads/2019/11/HVACR_111419_BlogPost.png');
+  background-repeat: no-repeat;
+  background-size: cover;
 }
-.user_exp_bg{
-    position: absolute;
-    top:0;
-    width: 100%;
-    height: 100%;
-    background-color: rgba(0, 0, 0, 0.593);
-    z-index: 1;
+
+.user_exp_bg {
+  position: absolute;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.593);
+  z-index: 1;
 }
 
 .container {
-    padding-top: 80px;
-    padding-bottom: 50px;
+  padding-top: 80px;
+  padding-bottom: 50px;
 }
-#sched_image{
-    width: 40px;
-  }
 
-  .inf-content{
-    border:1px solid #DDDDDD;
-    -webkit-border-radius:10px;
-    -moz-border-radius:10px;
-    border-radius:10px;
-    box-shadow: 7px 7px 7px rgba(0, 0, 0, 0.3);
-}	
+#sched_image {
+  width: 40px;
+}
+
+.inf-content {
+  border: 1px solid #DDDDDD;
+  -webkit-border-radius: 10px;
+  -moz-border-radius: 10px;
+  border-radius: 10px;
+  box-shadow: 7px 7px 7px rgba(0, 0, 0, 0.3);
+}
+
+.gradient-brand-color {
+  background-image: -webkit-linear-gradient(0deg, #376be6 0%, #6470ef 100%);
+  background-image: -ms-linear-gradient(0deg, #376be6 0%, #6470ef 100%);
+  color: #fff;
+}
+
+.contact-info__wrapper {
+  overflow: hidden;
+  border-radius: .625rem .625rem 0 0
+}
+
+@media (min-width: 1024px) {
+  .contact-info__wrapper {
+    border-radius: 0 .625rem .625rem 0;
+    padding: 5rem !important
+  }
+}
+
+.contact-info__list span.position-absolute {
+  left: 0
+}
+
+.z-index-101 {
+  z-index: 101;
+}
+
+.list-style--none {
+  list-style: none;
+}
+
+.contact__wrapper {
+  background-color: #fff;
+  border-radius: 0 0 .625rem .625rem
+}
+
+@media (min-width: 1024px) {
+  .contact__wrapper {
+    border-radius: .625rem 0 .625rem .625rem
+  }
+}
+
+@media (min-width: 1024px) {
+  .contact-form__wrapper {
+    padding: 5rem !important
+  }
+}
+
+.shadow-lg,
+.shadow-lg--on-hover:hover {
+  box-shadow: 0 1rem 3rem rgba(132, 138, 163, 0.1) !important;
+}
+
+
+
+
+
+.card {
+  margin-bottom: 24px;
+  box-shadow: 0 2px 3px #e4e8f0;
+}
+
+.card {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+  word-wrap: break-word;
+  background-color: #fff;
+  background-clip: border-box;
+  border: 1px solid #eff0f2;
+  border-radius: 1rem;
+}
+
+.avatar-md {
+  height: 4rem;
+  width: 4rem;
+}
+
+.rounded-circle {
+  border-radius: 50% !important;
+}
+
+.img-thumbnail {
+  padding: 0.25rem;
+  background-color: #f1f3f7;
+  border: 1px solid #eff0f2;
+  border-radius: 0.75rem;
+}
+
+.avatar-title {
+  align-items: center;
+  background-color: #3b76e1;
+  color: #fff;
+  display: flex;
+  font-weight: 500;
+  height: 100%;
+  justify-content: center;
+  width: 100%;
+}
+
+.bg-soft-primary {
+  background-color: rgba(59, 118, 225, .25) !important;
+}
+
+a {
+  text-decoration: none !important;
+}
+
+.badge-soft-danger {
+  color: #f56e6e !important;
+  background-color: rgba(245, 110, 110, .1);
+}
+
+.badge-soft-success {
+  color: #63ad6f !important;
+  background-color: rgba(99, 173, 111, .1);
+}
+
+.mb-0 {
+  margin-bottom: 0 !important;
+}
+
+.badge {
+  display: inline-block;
+  padding: 0.25em 0.6em;
+  font-size: 75%;
+  font-weight: 500;
+  line-height: 1;
+  color: #fff;
+  text-align: center;
+  white-space: nowrap;
+  vertical-align: baseline;
+  border-radius: 0.75rem;
+}

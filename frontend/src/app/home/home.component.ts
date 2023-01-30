@@ -69,7 +69,7 @@ export class HomeComponent implements OnInit {
 
     );
 
-   
+
   }
   concerns_data: any;
   addConcern(message: string) {

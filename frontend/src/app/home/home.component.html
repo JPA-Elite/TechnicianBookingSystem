@@ -19,7 +19,7 @@
         <li routerLink="/request/1">Request</li>
         <li routerLink="/transactions/1">Transactions</li>
         <li routerLink="/settings/1">Settings</li>
-        <i class="fa-solid fa-bell"></i>
+        <i class="fa-solid fa-bell" routerLink="/notifications/1"></i>
       </ul>
       <button class="btn" routerLink="/login" *ngIf="loggedIn" (click)="logOut()">LOGOUT</button>
     </div>
@@ -334,8 +334,8 @@
         <div style="padding-top: 20px;">
           <p style="color: rgba(0, 0, 0, 0.707);">By providing the information above, be sure you agree to our terms and
             condition.</p>
-           
-  
+
+
         </div>
 
 

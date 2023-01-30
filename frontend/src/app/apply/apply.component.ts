@@ -15,8 +15,12 @@ export class ApplyComponent implements OnInit {
   customers: any;
   user: any;
   form!: FormGroup;
-  submitted =  false;
-  files : any;
+  submitted = false;
+  certificates: any = [];
+  imageCertificateDirectory: any = "http://localhost:8000/cer_images/";
+  imageCustomerDirectory: any = "http://localhost:8000/tech_profile_images/";
+  files!: File;
+
   showCustomers() {
     this.customers = this.articleService
       .listCustomers()
@@ -28,14 +32,14 @@ export class ApplyComponent implements OnInit {
 
   deleteCustomer(id: any) {
     this.articleService.deleteCustomer(id).subscribe(
-      (      res: any) => {
+      (res: any) => {
         this.customers = this.customers.filter((a: any) => a.id != id);
       });
 
     this.router.navigateByUrl('/transactions');
 
   }
-  cers_data : any;
+  cers_data: any;
 
   // addCertificate() {
   //   this.cers_data = {
@@ -52,44 +56,48 @@ export class ApplyComponent implements OnInit {
   // }
   createForm() {
     this.form = this.fb.group({
-      image : [null, Validators.required]
+      image: [null, Validators.required]
     });
   }
-  get f(){
+  get f() {
     return this.form.controls;
   }
-  changeImage(event :any){
+  changeImage(event: any) {
     // this.files = (event.target as HTMLInputElement)?.files?.[0];
-    this.files = event.srcElement.files[0];
+    this.files = <File>event.target.files[0];
     // this.form.patchValue({
     //   image:this.files
     // });
     console.log(this.files);
   }
 
-  onSubmit(){
+  onSubmit(type: any) {
     this.submitted = true;
-    if (this.form.invalid){
-       console.log("not send");
+    if (this.form.invalid) {
+      console.log("not send");
     }
     const formData = new FormData();
-    formData.append("technician_account_id", this.user.id);
+
     formData.append("image", this.files, this.files.name);
+    formData.append("category", type);
+    formData.append("technician_account_id", this.user.id);
+
+
     // this.cers_data = {
-    //       'technician_account_id': Number(this.user.id),
-    //       'image' : formData
-    //     };
-        console.log(  formData);
-     this.articleService.addCertificate(formData as any ).subscribe(
-      (      res: any) => {
-       console.log(res);
+    //   'technician_account_id': formData.get('technician_account_id'),
+    //   'image': formData.get('image')
+    // };
+    console.log(formData);
+    this.articleService.addCertificate(formData).subscribe(
+      (res: any) => {
+        console.log(res);
+        window.location.reload();
       });
   }
 
 
   ngOnInit(): void {
     this.showCustomers();
-
     this.createForm()
 
     const headers = new HttpHeaders({
@@ -103,7 +111,17 @@ export class ApplyComponent implements OnInit {
           res => {
 
           });
+
+        this.http.get('http://localhost:8000/api/certificate/' + this.user.id, { headers: headers }).subscribe(
+          result => {
+            this.certificates = result;
+            // this.certificates = result;
+            console.log(this.certificates);
+          }
+        );
       }
     );
+
+
   }
 }

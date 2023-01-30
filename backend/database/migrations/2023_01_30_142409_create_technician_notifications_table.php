@@ -13,10 +13,9 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('technician_certificates', function (Blueprint $table) {
+        Schema::create('technician_notifications', function (Blueprint $table) {
             $table->id();
-            $table->string('image')->nullable();
-            $table->string('category');
+            $table->string('message');
             $table->unsignedBigInteger('technician_account_id');
             $table->timestamps();
         });
@@ -29,6 +28,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('technician_certificates');
+        Schema::dropIfExists('technician_notifications');
     }
 };

@@ -4,6 +4,7 @@ import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { Observable } from 'rxjs';
+import { ArticleService } from '../services/article.service';
 
 
 @Component({
@@ -13,7 +14,7 @@ import { Observable } from 'rxjs';
 })
 export class RegisterComponent implements OnInit {
   form!: FormGroup;
-  constructor(private fb: FormBuilder, private http: HttpClient, private router: Router) {
+  constructor(private fb: FormBuilder, private http: HttpClient, private router: Router,private articleService:ArticleService) {
 
   }
   pass: any;

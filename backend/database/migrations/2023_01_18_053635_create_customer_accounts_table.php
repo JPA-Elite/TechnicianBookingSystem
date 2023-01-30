@@ -24,6 +24,7 @@ return new class extends Migration
             $table->string('email');
             $table->string('password');
             $table->string('type');
+            $table->string('image');
             $table->timestamp('email_verified_at')->nullable();
             $table->rememberToken();
             $table->timestamps();

@@ -30,6 +30,7 @@ class TechnicianAccountFactory extends Factory
             'category' => $this->category(),
             'password' => '$2y$10$92IXUNpkjO0rOQ5byMi.Ye4oKoEa3Ro9llC/.og/at2.uheWG/igi',
             'type'=> 'technician',
+            'image'=> '',
 
 
             'email_verified_at' => now(),
@@ -43,7 +44,7 @@ class TechnicianAccountFactory extends Factory
         return $array[$this->faker->numberBetween($min = 0, $max = count($array) - 1) ];
     }
     private function category(){
-        $array = ['mobile device', 'appliances', 'cablings', 'computers', 'electricity', 'other'];
+        $array = ['Electrical Service Technician', 'IT Technician', 'Water Technician', 'Medical equipment technician', 'Automotive Technician'];
         return $array[$this->faker->numberBetween($min = 0, $max = count($array) - 1) ];
     }
 }

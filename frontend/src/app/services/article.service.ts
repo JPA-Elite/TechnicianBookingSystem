@@ -40,11 +40,17 @@ export class ArticleService {
   }
 
   login1(credentials:any): Observable<any>{
-    return this.http.post(this.url+ `/api/login/customer`,credentials);
+    const http = {
+      headers : new HttpHeaders({ 'Content-Type': 'application/json', 'Accept' : 'application/json' })
+    };
+    return this.http.post(this.url+ `/api/login/customer`,credentials,http);
   }
 
   login2(credentials:any): Observable<any>{
-    return this.http.post(this.url+ `/api/login/technician`,credentials);
+    const http = {
+      headers : new HttpHeaders({ 'Content-Type': 'application/json', 'Accept' : 'application/json' })
+    };
+    return this.http.post(this.url+ `/api/login/technician`,credentials,http);
   }
 
   showSchedules(id:number): Observable<any>{
@@ -57,7 +63,28 @@ export class ArticleService {
     return this.http.post(this.url+ `/api/feedback` , feed, this.httpOptions);
   }
   addCertificate(cer:any): Observable<any>{
-    return this.http.post(this.url+ `/api/certificate` , cer, this.httpOptions);
+    // const request = request.clone({
+    //   headers : request.headers
+    //     .set('Authorization', 'Bearer ' + token)
+    //     .set('Accept', 'application/json')
+    //     .set('Content-Type', 'multipart/form-data;boundary=§§§')
+    // });
+    const http = {
+      headers : new HttpHeaders({  'Accept' : 'application/json' })
+    };
+    return this.http.post(this.url+ `/api/certificate` , cer,http);
+  }
+  updateTechnicianAccount(id:any, tech:any): Observable<any>{
+    // const request = request.clone({
+    //   headers : request.headers
+    //     .set('Authorization', 'Bearer ' + token)
+    //     .set('Accept', 'application/json')
+    //     .set('Content-Type', 'multipart/form-data;boundary=§§§')
+    // });
+    const http = {
+      headers : new HttpHeaders({  'Accept' : 'application/json', 'Authorization': `Bearer ${localStorage.getItem('token')}` })
+    };
+    return  this.http.put('http://localhost:8000/api/technician/' + id, tech,http);
   }
 }
 

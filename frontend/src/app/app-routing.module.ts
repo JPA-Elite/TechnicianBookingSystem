@@ -14,7 +14,7 @@ import { AboutUsComponent } from './about-us/about-us.component';
 import { SettingsTechnicianComponent } from './settings-technician/settings-technician.component';
 import { ReqTechnicianComponent } from './req-technician/req-technician.component';
 import { TransactionsTechnicianComponent } from './transactions-technician/transactions-technician.component';
-
+import { NotificationsTechnicianComponent } from './notifications-technician/notifications-technician.component';
 
 
 
@@ -63,6 +63,11 @@ const routes: Routes = [
   },
   {
     path: 'request/1', component: ReqTechnicianComponent
+
+  }
+  ,
+  {
+    path: 'notifications/1', component: NotificationsTechnicianComponent
 
   }
 ];

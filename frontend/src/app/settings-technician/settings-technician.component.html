@@ -35,23 +35,24 @@
                 <h5 class="card-title mb-0" style="font-weight: bold;">Account info</h5>
                 <br>
                 <div class="alert alert-success" role="alert">
-                  <p class="mb-0">Below shows your profile information. You can manage and update your information below. </p>
+                  <p class="mb-0">Below shows your profile information. You can manage and update your information
+                    below. </p>
                 </div>
               </div>
 
               <br>
               <div class="card-body">
-                <form>
+                <div >
                   <div class="form-row">
                     <div class="form-group col-md-6">
                       <label for="inputFirstName" style="font-weight: bold;">Name</label>
-                      <input type="text" class="form-control" id="inputFirstName" value="{{ user.name }}">
+                      <input type="text" class="form-control" id="inputFirstName" value="{{ user.name }}" #name>
                     </div>
                     <br>
                     <div class="form-group col-md-4 d-flex align-items-center gap-3">
                       <label for="inputLastName" style="font-weight: bold;">Gender</label>
 
-                      <select id="inputState" class="form-control" (ngModelChange)="user.gender">
+                      <select id="inputState" class="form-control" #gender>
                         <option value="">Change</option>
                         <option value="male">Male</option>
                         <option value="female">Female</option>
@@ -63,38 +64,52 @@
                   <br>
                   <div class="form-group col-md-6">
                     <label for="inputEmail4" style="font-weight: bold;">Birth Date</label>
-                    <input type="text" class="form-control" id="inputBirthdate" value="{{ user.birthdate }}">
+                    <input type="text" class="form-control" id="inputBirthdate" value="{{ user.birthdate }}" #birthdate>
                   </div>
                   <br>
                   <div class="form-group col-md-2">
                     <label for="inputAddress" style="font-weight: bold;">Age</label>
-                    <input type="text" class="form-control" id="inputAge" value="{{ user.age }}">
+                    <input type="text" class="form-control" id="inputAge" value="{{ user.age }}" #age>
                   </div>
                   <br>
                   <div class="form-group col-md-6">
                     <label for="inputAddress2" style="font-weight: bold;">Address</label>
-                    <input type="text" class="form-control" id="inputAddress" value="{{ user.address }}">
+                    <input type="text" class="form-control" id="inputAddress" value="{{ user.address }}" #address>
                   </div>
                   <br>
                   <div class="form-row">
                     <div class="form-group col-md-6">
                       <label for="inputCity" style="font-weight: bold;">Phone</label>
-                      <input type="text" class="form-control" id="inputPhone" value="{{ user.phone }}">
+                      <input type="text" class="form-control" id="inputPhone" value="{{ user.phone }}" #phone>
                     </div>
                     <br>
                     <div class="form-group col-md-6">
                       <label for="inputState" style="font-weight: bold;">Email</label>
-                      <input type="text" class="form-control" id="inputEmail" value="{{ user.email }}">
+                      <input type="text" class="form-control" id="inputEmail" value="{{ user.email }}" #email>
 
                     </div>
                     <br>
                     <div class="form-group col-md-6">
                       <label for="inputState" style="font-weight: bold;">Valid ID</label>
                       <div class="">
-                        <input type="file" class="form-control" id="inputValidID">
+                        <input type="file" class="form-control" id="inputValidID" value="{{ user.valid_id }} " #validID>
                         <small style="position: relative;top: 8px;font-size: 12px;font-weight: bold;"
                           id="validIDText">{{
                           user.valid_id }}</small>
+
+                      </div>
+
+
+                    </div>
+                    <br>
+
+                    <div class="form-group col-md-6">
+                      <label for="inputState" style="font-weight: bold;">Change Profile</label>
+                      <div class="">
+                        <input type="file" class="form-control" id="inputValidID" (change)="changeImage($event)">
+                        <small style="position: relative;top: 8px;font-size: 12px;font-weight: bold;"
+                          id="validIDText">{{
+                          user.image }}</small>
 
                       </div>
 
@@ -106,7 +121,8 @@
                       <label for="inputZip" style="font-weight: bold;">Category</label>
                       <div class="form-group col-md-6 d-flex align-items-center gap-3">
 
-                        <select id="inputState" class="form-control" (ngModelChange)="user.gender">
+                        <select id="inputState" class="form-control" (ngModelChange)="user.gender"
+                          [value]="user.category" #category>
                           <option value="">Change Category...</option>
                           <option value="electrician">Electrical Service Technician</option>
                           <option value="computer-technician">Computer Technician</option>
@@ -118,8 +134,9 @@
                     </div>
                   </div>
                   <br>
-                  <button type="submit" class="btn btn-primary">Save changes</button>
-                </form>
+                  <button type="submit" class="btn btn-primary" (click)="onSubmit(name.value, email.value, address.value,gender.value,age.value,birthdate.value,phone.value
+                  ,validID.value, category.value)">Save changes</button>
+                </div>
               </div>
             </div>
           </div>
@@ -165,13 +182,15 @@
                 <h5 class="card-title" style="font-weight: bold;color:white">Remove Account</h5>
                 <br>
                 <div class="alert alert-danger alert-dismissible fade show" role="alert">
-                  <strong>Warning!</strong> This page may remove your account and you don't have access anymore. Please be guided before you proceed.
+                  <strong>Warning!</strong> This page may remove your account and you don't have access anymore. Please
+                  be guided before you proceed.
 
                 </div>
                 <br>
                 <div class="jumbotron">
                   <hr class="my-4">
-                  <p>Once you delete your account, there is no turning back. You have possible accept the consequences.</p>
+                  <p>Once you delete your account, there is no turning back. You have possible accept the consequences.
+                  </p>
                   <p class="lead">
                     <a class="btn btn-danger btn" role="button">Remove Account</a>
                   </p>

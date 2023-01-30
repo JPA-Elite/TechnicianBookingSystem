@@ -21,6 +21,7 @@ class CustomerAccount extends Model
         'email',
         'password',
         'type',
+        'image',
         'email_verified_at',
         'remember_token'
     ];

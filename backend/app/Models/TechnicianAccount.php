@@ -26,6 +26,7 @@ class TechnicianAccount extends Model
         'category',
         'password',
         'type',
+        'image',
         'email_verified_at',
         'remember_token'
 
