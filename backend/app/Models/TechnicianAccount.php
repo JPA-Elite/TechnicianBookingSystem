@@ -8,6 +8,7 @@ use Illuminate\Notifications\Notifiable;
 use App\Models\Place;
 use App\Models\TechnicianSchedule;
 use App\Models\TechnicianCertificate;
+use App\Models\TechnicianNotification;
 use Illuminate\Database\Eloquent\Model;
 
 class TechnicianAccount extends Model
@@ -49,6 +50,9 @@ class TechnicianAccount extends Model
     }
     public function certificates(){
         return $this->hasMany(TechnicianCertificate::class);
+    }
+    public function notifications(){
+        return $this->hasMany(TechnicianNotification::class)->orderBy('created_at', 'desc');
     }
 
     /**

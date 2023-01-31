@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\TechnicianNotification;
 use Illuminate\Http\Request;
+use App\Models\TechnicianAccount;
 
 class TechnicianNotificationController extends Controller
 {
@@ -54,7 +55,8 @@ class TechnicianNotificationController extends Controller
      */
     public function show($id)
     {
-        return TechnicianNotification::find($id);
+        return TechnicianAccount::find($id)->notifications;
+
     }
 
     /**
