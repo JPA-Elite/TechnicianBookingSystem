@@ -15,6 +15,10 @@ import { SettingsTechnicianComponent } from './settings-technician/settings-tech
 import { ReqTechnicianComponent } from './req-technician/req-technician.component';
 import { TransactionsTechnicianComponent } from './transactions-technician/transactions-technician.component';
 import { NotificationsTechnicianComponent } from './notifications-technician/notifications-technician.component';
+import { ReqCustomerComponent } from './req-customer/req-customer.component';
+import { TransactionsCustomerComponent } from './transactions-customer/transactions-customer.component';
+import { SettingsCustomerComponent } from './settings-customer/settings-customer.component';
+import { NotificationCustomerComponent } from './notification-customer/notification-customer.component';
 
 
 
@@ -49,6 +53,9 @@ const routes: Routes = [
     path: 'transactions/1', component: TransactionsTechnicianComponent
   },
   {
+    path: 'transactions/2', component: TransactionsCustomerComponent
+  },
+  {
     path: 'home/1', component: HomeComponent
   },
   {
@@ -62,12 +69,25 @@ const routes: Routes = [
 
   },
   {
+    path: 'settings/2', component: SettingsCustomerComponent
+
+  },
+  {
     path: 'request/1', component: ReqTechnicianComponent
 
   }
   ,
   {
+    path: 'request/2', component: ReqCustomerComponent
+
+  }
+  ,
+  {
     path: 'notifications/1', component: NotificationsTechnicianComponent
+
+  },
+  {
+    path: 'notifications/2', component: NotificationCustomerComponent
 
   }
 ];

@@ -1,4 +1,3 @@
-
 <body>
   <div class="main">
     <div class="d-flex align-items-center">
@@ -10,7 +9,8 @@
     <form class="form-inline d-flex gap-1">
       <input class="form-control mr-sm-3" style="width: 350px" type="search" placeholder="Search...."
         aria-label="Search">
-      <button class="btn btn-outline-dark my-2 my-sm-0" type="submit">Search</button>
+      <button class="btn btn-outline-dark my-2 my-sm-0" type="submit" data-toggle="modal"
+        data-target="#exampleModalLong">Search</button>
     </form>
 
     <div class="d-flex align-items-center gap-3">
@@ -25,6 +25,80 @@
     </div>
   </div>
 
+  <!-- Modal -->
+  <div class="modal fade" id="exampleModalLong" style="width: 100%;" tabindex="-1" role="dialog"
+    aria-labelledby="exampleModalLongTitle" aria-hidden="true">
+    <div role="document" class="modal-dialog modal-lg" #modalSearch>
+
+      <div class="modal-content" style="width:100%">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLongTitle">See Results</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          <div class="container">
+            <div class="row ng-scope">
+              <!-- <div class="col-md-3 col-md-push-9">
+                <h4>Results <span class="fw-semi-bold">Filtering</span></h4>
+
+              </div> -->
+              <div class="col-md-10 col-md-pull-3">
+                <p class="search-results-count">About {{ countCustomer }} results</p>
+                <section class="search-result-item" *ngFor="let cus of customers;let i = index">
+                  <div style="display: none;"></div>
+                  <a class="image-link" href="#"><img class="image"
+                      src="https://bootdey.com/img/Content/avatar/avatar1.png">
+                  </a>
+                  <div class="search-result-item-body">
+                    <div class="row">
+                      <div class="col-sm-9">
+                        <h2 class="search-result-item-heading " style="font-weight: bold;"><a href="">john doe</a></h2>
+                        <p class="info">Location: {{ cus.address }}</p>
+                        <p class="info">Phone: {{ cus.phone }}</p>
+                        <p class="info">Email: {{ cus.email }}</p>
+
+
+
+
+                      </div>
+                      <div class="col-sm-3 text-align-center">
+                        <a class="btn btn-primary btn-info btn-sm" href="" style="margin-bottom: 5px;">Contact</a>
+                        &nbsp;
+                        <a class="btn btn-primary btn-info btn-sm" href="">Message</a>
+                      </div>
+                    </div>
+                  </div>
+                </section>
+
+                <div class="text-align-center">
+                  <ul class="pagination pagination-sm">
+                    <li class="disabled"><a href="">Prev</a>
+                    </li>
+                    |
+                    <li><a href=" ">Next</a>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+
+
+
+
+
   <div style="background:rgba(255, 255, 255, 0.3);padding:120px 0px 30px 0px; ">
     <h1 class="text-center" *ngIf="user">Welcome <b class="text-primary">{{ user.name }}</b>! </h1>
     <div class="maincontainer">
@@ -34,7 +108,7 @@
           Total Technicians:
           <span
             class="position-absolute top-0 start-100 translate-middle p-2 bg-success border border-light rounded-circle">
-            <span class="visually-hidden">Total Technicians:</span>
+            <span class="visually-hidden">Total Customers:</span>
           </span>
         </button>
         <div>
@@ -44,7 +118,7 @@
       </div>
       <div class="subcontainer">
         <button type="button" class="btn btn-primary position-relative">
-          Active Technicians:
+          Active Customers:
           <span
             class="position-absolute top-0 start-100 translate-middle p-2 bg-success border border-light rounded-circle">
             <span class="visually-hidden">Active Technicians:</span>
@@ -56,7 +130,7 @@
       </div>
       <div class="subcontainer">
         <button type="button" class="btn btn-primary position-relative">
-          Pending Technicians:
+          Pending Customers:
           <span
             class="position-absolute top-0 start-100 translate-middle p-2 bg-warning border border-light rounded-circle">
             <span class="visually-hidden">Pending Technicians:</span>
@@ -68,7 +142,7 @@
       </div>
       <div class="subcontainer">
         <button type="button" class="btn btn-primary position-relative">
-          Cancelled Technicians:
+          Cancelled Customers:
           <span
             class="position-absolute top-0 start-100 translate-middle p-2 bg-danger border border-light rounded-circle">
             <span class="visually-hidden">Cancelled Technicians:</span>
@@ -287,7 +361,7 @@
 
   </div>
 
-<br><br>
+  <br><br>
 
   <section id="contact" style="background:rgba(127, 255, 212, 0.3);padding-bottom: 30px;">
 
@@ -302,18 +376,21 @@
       <div>
         <div class="d-flex align-items-center">
           <div class="form-floating mb-3">
-            <input type="text" class="form-control" id="floatingInputDisabled" placeholder="name@example.com" value="{{ user.name }}" disabled>
+            <input type="text" class="form-control" id="floatingInputDisabled" placeholder="name@example.com"
+              value="{{ user.name }}" disabled>
             <label for="floatingInputDisabled">Name</label>
           </div>&nbsp;
 
           <div class="form-floating mb-3">
-            <input type="text" class="form-control" id="floatingInputDisabled" placeholder="name@example.com" value="{{ user.phone }}" disabled>
+            <input type="text" class="form-control" id="floatingInputDisabled" placeholder="name@example.com"
+              value="{{ user.phone }}" disabled>
             <label for="floatingInputDisabled">Phone</label>
           </div>&nbsp;
 
 
           <div class="form-floating mb-3">
-            <input type="email" class="form-control" id="floatingInputDisabled" placeholder="name@example.com" value="{{ user.email }}" disabled>
+            <input type="email" class="form-control" id="floatingInputDisabled" placeholder="name@example.com"
+              value="{{ user.email }}" disabled>
             <label for="floatingInputDisabled">Email address</label>
           </div><br>
 
@@ -323,11 +400,12 @@
 
         <div class="form-floating mb-3">
           <textarea class="form-control" placeholder="Leave a comment here" id="floatingTextarea2Disabled"
-            style="height: 130px;resize: none;border: solid 2px #004242;" (click)="errRemove()" #concern_message></textarea>
+            style="height: 130px;resize: none;border: solid 2px #004242;" (click)="errRemove()"
+            #concern_message></textarea>
           <label for="floatingTextarea2Disabled">Your text here...</label>
 
         </div>
-        <button type="button" class="btn btn-primary " (click) = "addConcern(concern_message.value)">Send Concern</button>
+        <button type="button" class="btn btn-primary " (click)="addConcern(concern_message.value)">Send Concern</button>
         <br><br>
         <div class="alert alert-danger  concern-alert" #errconcern>The message field is required!</div>
         <div class="alert alert-success  concern-alert" #succconcern>Your concern was successfully send!</div>
@@ -369,7 +447,8 @@
     <div class="modal-dialog" role="document">
       <div class="modal-content">
         <div class="modal-header">
-          <div class="collapseExample alert alert-warning" id="exampleModalLabel">Be sure you added your schedule correctly before going to proceed!</div>
+          <div class="collapseExample alert alert-warning" id="exampleModalLabel">Be sure you added your schedule
+            correctly before going to proceed!</div>
           <!-- <button type="button" class="close" data-dismiss="modal" aria-label="Close">
             <span aria-hidden="true">&times;</span>
           </button> -->

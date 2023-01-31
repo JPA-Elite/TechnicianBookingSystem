@@ -7,16 +7,21 @@ import { Observable } from 'rxjs';
 })
 export class ArticleService {
 
+  httpOptions = {
+    headers : new HttpHeaders({ 'Content-Type': 'application/json', 'Accept' : 'application/json' ,   'Authorization': `Bearer ${localStorage.getItem('token')}`})
+  };
+
+
   url:string = 'http://localhost:8000';
   constructor(private http : HttpClient) {}
 
   listCustomers(){
-    return this.http.get<any>(this.url+ `/api/customer`);
+    return this.http.get<any>(this.url+ `/api/customer`, this.httpOptions);
+  }
+  listTechnicians(){
+    return this.http.get<any>(this.url+ `/api/technician`, this.httpOptions);
   }
 
-  httpOptions = {
-    headers : new HttpHeaders({ 'Content-Type': 'application/json', 'Accept' : 'application/json' ,   'Authorization': `Bearer ${localStorage.getItem('token')}`})
-  };
 
   addCustomers(customer:any): Observable<any>{
     return this.http.post<any>(this.url+ `/api/customer`,customer, this.httpOptions);
@@ -63,16 +68,8 @@ export class ArticleService {
     return this.http.post(this.url+ `/api/feedback` , feed, this.httpOptions);
   }
   addCertificate(cer:any): Observable<any>{
-    // const request = request.clone({
-    //   headers : request.headers
-    //     .set('Authorization', 'Bearer ' + token)
-    //     .set('Accept', 'application/json')
-    //     .set('Content-Type', 'multipart/form-data;boundary=§§§')
-    // });
-    const http = {
-      headers : new HttpHeaders({  'Accept' : 'application/json' })
-    };
-    return this.http.post(this.url+ `/api/certificate` , cer,http);
+
+    return this.http.post(this.url+ `/api/certificate` , cer,this.httpOptions);
   }
   updateTechnicianAccount(id:any, tech:any): Observable<any>{
     // const request = request.clone({
@@ -85,6 +82,18 @@ export class ArticleService {
       headers : new HttpHeaders({  'Accept' : 'application/json', 'Authorization': `Bearer ${localStorage.getItem('token')}` })
     };
     return  this.http.put('http://localhost:8000/api/technician/' + id, tech,http);
+  }
+  updateCustomerAccount(id:any, customer:any): Observable<any>{
+    // const request = request.clone({
+    //   headers : request.headers
+    //     .set('Authorization', 'Bearer ' + token)
+    //     .set('Accept', 'application/json')
+    //     .set('Content-Type', 'multipart/form-data;boundary=§§§')
+    // });
+    const http = {
+      headers : new HttpHeaders({  'Accept' : 'application/json', 'Authorization': `Bearer ${localStorage.getItem('token')}` })
+    };
+    return  this.http.put('http://localhost:8000/api/customer/' + id, customer,http);
   }
 }
 

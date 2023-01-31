@@ -14,14 +14,29 @@ export class HomeComponent implements OnInit {
   user: any;
   loggedIn = false;
   scheds: any;
+  customers:any;
+  countCustomer:any;
 
   @ViewChild('errconcern') errconcern!: ElementRef;
   @ViewChild('succconcern') succconcern!: ElementRef;
   @ViewChild('concern_message') concern_message!: ElementRef;
+  @ViewChild('modalSearch') modalSearch!: ElementRef;
+
   constructor(private http: HttpClient, private router: Router, private articleService: ArticleService, private fb: FormBuilder) {
 
   }
+  showCustomers() {
+    this.customers = this.articleService
+      .listCustomers()
+      .subscribe((customer: any) => {
+        this.customers = customer;
+        console.log(this.customers);
+        this.countCustomer = customer.length;
+      });
+  }
   ngOnInit() {
+    this.showCustomers();
+
     const headers = new HttpHeaders({
       'Authorization': `Bearer ${localStorage.getItem('token')}`
     });
@@ -135,5 +150,9 @@ export class HomeComponent implements OnInit {
     this.router.navigate(['/']);
 
 
+  }
+
+  dismissModal(){
+    this.modalSearch.nativeElement.style.display = 'none';
   }
 }

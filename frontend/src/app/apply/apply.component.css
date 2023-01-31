@@ -1,3 +1,9 @@
+body{
+  background-image: linear-gradient(to right, rgb(255, 255, 255), rgba(216, 236, 233, 0.887)), url(https://images.pexels.com/photos/7238606/pexels-photo-7238606.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1);
+}
+
+
+
 .first_div {
   background: rgba(127, 255, 212, 0.3);
   padding: 70px 90px 70px 90px;

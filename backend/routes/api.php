@@ -26,8 +26,8 @@ Route::post("/register/customer", [CustomerAccountController::class, 'store']);
 Route::post('/login/technician', [AuthController::class, "loginTechnicianAcc"]);
 Route::post('/login/customer', [AuthController::class, "loginCustomerAcc"]);
 
-Route::get("customer", [CustomerAccountController::class, 'index']);
-Route::post('certificate', [TechnicianCertificateController::class, "store"]);
+
+
 Route::middleware('auth:sanctum')->group(function () {
 
     Route::get("technician", [TechnicianAccountController::class, 'index']);
@@ -36,6 +36,7 @@ Route::middleware('auth:sanctum')->group(function () {
     Route::patch("technician/{id}", [TechnicianAccountController::class, 'update']);
     Route::delete("technician/{id}", [TechnicianAccountController::class, 'destroy']);
 
+    Route::get("customer", [CustomerAccountController::class, 'index']);
     Route::get("customer/{id}", [CustomerAccountController::class, 'show']);
     Route::put("customer/{id}", [CustomerAccountController::class, 'update']);
     Route::patch("customer/{id}", [CustomerAccountController::class, 'update']);
@@ -49,6 +50,7 @@ Route::middleware('auth:sanctum')->group(function () {
     Route::post('customer/logout', [AuthController::class, "logoutCustomerAcc"]);
     Route::post('technician/logout', [AuthController::class, "logoutTechnicianAcc"]);
 
+    Route::post('certificate', [TechnicianCertificateController::class, "store"]);
     Route::get('certificate', [TechnicianCertificateController::class, "index"]);
     Route::get('certificate/{id}', [TechnicianCertificateController::class, "show"]);
     Route::put('certificate/{id}', [TechnicianCertificateController::class, "update"]);

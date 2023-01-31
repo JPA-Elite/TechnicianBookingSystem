@@ -1,256 +1,276 @@
 <app-navbar></app-navbar>
-<div class="first_div">
 
-  <div class="background_image">
-    <div style="z-index: 2;position: relative;left: 50px;top:230px">
-      <h1 style="color: white;">Apply here the details <br>that you want to achieve.</h1>
-      <p style="color: white;"> Gain customer experience by upgrading your position and communicate to different
-        customers.</p>
-      <!-- <button type="button" class="btn btn-primary ">Contact Customers</button>&nbsp;
+<body>
+
+
+  <div class="first_div">
+
+    <div class="background_image">
+      <div style="z-index: 2;position: relative;left: 50px;top:230px">
+        <h1 style="color: white;">Apply here the details <br>that you want to achieve.</h1>
+        <p style="color: white;"> Gain customer experience by upgrading your position and communicate to different
+          customers.</p>
+        <!-- <button type="button" class="btn btn-primary ">Contact Customers</button>&nbsp;
             <button type="button" class="btn btn-primary ">Enhance your Field</button> -->
-    </div>
-    <div class="user_exp_bg"></div>
-  </div>
-</div>
-
-<div class="container">
-  <div class="d-flex align-items-center justify-content-between"
-    style="border-bottom:2px solid black;padding-bottom:10px">
-    <div class="d-flex align-items-center gap-2" style="margin-bottom: 15px;">
-      <img src="../../assets/images/options.png" id="sched_image" alt="time" srcset="">
-      <div>
-        <h5>Your Category Field</h5>
-        <small class="text-success">Status: current</small>
       </div>
-
+      <div class="user_exp_bg"></div>
     </div>
-    <!-- <button type="button" class="btn btn-primary ">Add Category</button>  -->
-    <p>
-      <button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#multiCollapseExample1"
-        aria-expanded="false" aria-controls="multiCollapseExample2">Show Category</button>&nbsp;
-      <button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#multiCollapseExample2"
-        aria-expanded="false" aria-controls="multiCollapseExample2">Add Category</button>
-
-    </p>
   </div>
-  <!-- <div class="alert alert-success">
+
+  <div class="container" style="background-color: rgba(255, 255, 255, 0.326);">
+    <div class="d-flex align-items-center justify-content-between"
+      style="border-bottom:2px solid black;padding-bottom:10px">
+      <div class="d-flex align-items-center gap-2" style="margin-bottom: 15px;">
+        <img src="../../assets/images/options.png" id="sched_image" alt="time" srcset="">
+        <div>
+          <h5>Your Category Field</h5>
+          <small class="text-success">Status: current</small>
+        </div>
+
+      </div>
+      <!-- <button type="button" class="btn btn-primary ">Add Category</button>  -->
+      <p>
+        <button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#multiCollapseExample1"
+          aria-expanded="false" aria-controls="multiCollapseExample2">Show Category</button>&nbsp;
+        <button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#multiCollapseExample2"
+          aria-expanded="false" aria-controls="multiCollapseExample2">Add Category</button>
+
+      </p>
+    </div>
+    <!-- <div class="alert alert-success">
     This part will show the identity of your current position.
   </div> -->
-  <div class="row">
-    <div class="col">
-      <div class="collapse" id="multiCollapseExample1">
+    <div class="row">
+      <div class="col">
+        <div class="collapse" id="multiCollapseExample1">
 
-        <div class="container bootstrap snippets bootdey " style="height:500px;overflow-y: auto;">
+          <div class="container bootstrap snippets bootdey " style="height:500px;overflow-y: auto;">
 
-          <div class="panel-body inf-content " *ngFor="let data of certificates.certificates" style="margin-top: 10px;">
-            <div class="row">
-              <div class=" p-3">
-                <img alt="" style="width:200px;" title="" class="img-circle img-thumbnail isTooltip"
-                  src="{{ imageCertificateDirectory }}{{ data.image }}" data-original-title="Usuario">
-                <br>
-                <ul title="Ratings" class="list-inline ratings text-center">
-                  <li><a href="#"><span class="glyphicon glyphicon-star"></span></a></li>
-                  <li><a href="#"><span class="glyphicon glyphicon-star"></span></a></li>
-                  <li><a href="#"><span class="glyphicon glyphicon-star"></span></a></li>
-                  <li><a href="#"><span class="glyphicon glyphicon-star"></span></a></li>
-                  <li><a href="#"><span class="glyphicon glyphicon-star"></span></a></li>
-                </ul>
-              </div>
-              <div>
+            <div class="panel-body inf-content " *ngFor="let data of certificates.certificates"
+              style="margin-top: 10px;">
+              <div class="row">
+                <div class=" p-3">
+                  <img alt="" style="width:200px;" title="" class="img-circle img-thumbnail isTooltip"
+                    src="{{ imageCertificateDirectory }}{{ data.image }}" data-original-title="Usuario">
+                  <br>
+                  <ul title="Ratings" class="list-inline ratings text-center">
+                    <li><a href="#"><span class="glyphicon glyphicon-star"></span></a></li>
+                    <li><a href="#"><span class="glyphicon glyphicon-star"></span></a></li>
+                    <li><a href="#"><span class="glyphicon glyphicon-star"></span></a></li>
+                    <li><a href="#"><span class="glyphicon glyphicon-star"></span></a></li>
+                    <li><a href="#"><span class="glyphicon glyphicon-star"></span></a></li>
+                  </ul>
+                </div>
+                <div>
 
 
-                <div class="">
-                  <strong class="alert alert-success">Information Details</strong><br>
-                  <div class="table-responsive">
-                    <table class="table table-user-information">
-                      <tbody>
-                        <tr>
-                          <br>
+                  <div class="">
+                    <strong class="alert alert-success">Information Details</strong><br>
+                    <div class="table-responsive">
+                      <table class="table table-user-information">
+                        <tbody>
+                          <tr>
+                            <br>
 
-                        </tr>
-                        <tr>
-                          <td>
-                            <strong>
-                              <span class="glyphicon glyphicon-user  text-primary"></span>
-                              Type
-                            </strong>
-                          </td>
-                          <td class="text-primary" #type1>
-                            {{ data.category }}
-                          </td>
-                        </tr>
-                        <tr>
-                          <td>
-                            <strong>
-                              <span class="glyphicon glyphicon-cloud text-primary"></span>
-                              Certification Status
-                            </strong>
-                          </td>
-                          <td class="text-primary text-center">
+                          </tr>
+                          <tr>
+                            <td>
+                              <strong>
+                                <span class="glyphicon glyphicon-user  text-primary"></span>
+                                Type
+                              </strong>
+                            </td>
+                            <td class="text-primary" #type1>
+                              {{ data.category }}
+                            </td>
+                          </tr>
+                          <tr>
+                            <td>
+                              <strong>
+                                <span class="glyphicon glyphicon-cloud text-primary"></span>
+                                Certification Status
+                              </strong>
+                            </td>
+                            <td class="text-primary text-center">
 
-                            <form [formGroup]="form" *ngIf="data.image == null" (ngSubmit)="onSubmit(type1.innerHTML)"
-                              enctype="multipart/form-data" method="post">
-                              <input type="file" class="btn btn-primary" formControlName="image"
-                                (change)="changeImage($event)" #cer_file>
-                              <!-- <div *ngIf="submitted && f.image.errors" class="alert alert-danger">
+                              <form [formGroup]="form" *ngIf="data.image == null" (ngSubmit)="onSubmit(type1.innerHTML)"
+                                enctype="multipart/form-data" method="post">
+                                <input type="file" class="btn btn-primary" formControlName="image"
+                                  (change)="changeImage($event)" #cer_file>
+                                <!-- <div *ngIf="submitted && f.image.errors" class="alert alert-danger">
                                                 <div *ngIf="f.image.errors.required">Image is required! </div>
                                             </div> -->
-                              <button class="btn" type="submit">Add Certificate</button>
-                            </form>
+                                <button class="btn" type="submit">Add Certificate</button>
+                              </form>
 
-                            <div *ngIf="data.image != null" class="alert alert-success">You have certificate already!
-                            </div>
+                              <div *ngIf="data.image != null" class="alert alert-success">You have certificate already!
+                              </div>
 
-                          </td>
-                        </tr>
-                        <tr>
-                          <td>
-                            <strong>
-                              <span class="glyphicon glyphicon-cloud text-primary"></span>
-                              Date
-                            </strong>
-                          </td>
-                          <td class="text-primary">
-                            Janaury 23, 2023
-                          </td>
-                        </tr>
+                            </td>
+                          </tr>
+                          <tr>
+                            <td>
+                              <strong>
+                                <span class="glyphicon glyphicon-cloud text-primary"></span>
+                                Date
+                              </strong>
+                            </td>
+                            <td class="text-primary">
+                              Janaury 23, 2023
+                            </td>
+                          </tr>
 
 
-                      </tbody>
-                    </table>
+                        </tbody>
+                      </table>
+                    </div>
                   </div>
                 </div>
               </div>
             </div>
           </div>
+
+
         </div>
-
-
       </div>
-    </div>
 
-    <div class="col">
-      <div class="collapse multi-collapse" id="multiCollapseExample2">
-        <br>
-        <div class="alert alert-warning">
-          Add position to gain customer's experience through adding certificates.
-        </div>
-        <h3 class=" text-center">Certificates</h3>
-        <hr>
-        <div class="btn-toolbar" role="toolbar" aria-label="Toolbar with button groups">
+      <div class="col">
+        <div class="collapse multi-collapse" id="multiCollapseExample2">
+          <br>
+          <div class="alert alert-warning">
+            Add position to gain customer's experience through adding certificates.
+          </div>
+          <h3 class=" text-center">Certificates</h3>
+          <hr>
+          <div class="btn-toolbar" role="toolbar" aria-label="Toolbar with button groups">
 
-          <div class="btn-group mr-2 mt-2" role="group" aria-label="First group" *ngFor="let data of certificates.certificates">
-            <button type="button" class="btn btn-secondary position-relative">
-            {{ data.category }}
-              <span
-                class="position-absolute top-0 start-100 translate-middle p-2 bg-success border border-light rounded-circle">
-                <span class="visually-hidden"></span>
-              </span>
-            </button>
+            <div class="btn-group mr-2 mt-2" role="group" aria-label="First group"
+              *ngFor="let data of certificates.certificates">
+              <button type="button" class="btn btn-secondary position-relative">
+                {{ data.category }}
+                <span
+                  class="position-absolute top-0 start-100 translate-middle p-2 bg-success border border-light rounded-circle">
+                  <span class="visually-hidden"></span>
+                </span>
+              </button>
+
+
+            </div>
+
 
 
           </div>
 
+          <div class="container">
+            <div class="contact__wrapper shadow-lg mt-n9">
+              <div class="row no-gutters">
 
+                <!-- <div class="col-lg-7 contact-form__wrapper p-5 order-lg-1"> -->
+                <form action="#" class="contact-form form-validate" novalidate="novalidate"
+                  (ngSubmit)="onSubmit(type2.value)">
+                  <div class="row">
 
-        </div>
-
-        <div class="container">
-          <div class="contact__wrapper shadow-lg mt-n9">
-            <div class="row no-gutters">
-
-              <!-- <div class="col-lg-7 contact-form__wrapper p-5 order-lg-1"> -->
-              <form action="#" class="contact-form form-validate" novalidate="novalidate" (ngSubmit)="onSubmit(type2.value)">
-                <div class="row">
-
-                  <div class="col-sm-6 mb-3">
-                    <div class="form-group">
-                      <label class="required-field" for="category">Category</label>
-                      <select formControlName="category" class="custom-select" id="category" #type2>
-                        <option value="">Select</option>
-                        <option value="Electrical Service Technician">Electrical Service Technician</option>
-                        <option value="Computer Technician">IT Technician</option>
-                        <option value="Water Technician">Water Technician</option>
-                        <option value=" Medical equipment technician"> Medical equipment technician</option>
-                        <option value="Automotive Technician">Automotive Technician</option>
-                      </select>
+                    <div class="col-sm-6 mb-3">
+                      <div class="form-group">
+                        <label class="required-field" for="category">Category</label>
+                        <select formControlName="category" class="custom-select" id="category" #type2>
+                          <option value="">Select</option>
+                          <option value="Electrical Service Technician">Electrical Service Technician</option>
+                          <option value="Computer Technician">IT Technician</option>
+                          <option value="Water Technician">Water Technician</option>
+                          <option value=" Medical equipment technician"> Medical equipment technician</option>
+                          <option value="Automotive Technician">Automotive Technician</option>
+                        </select>
+                      </div>
                     </div>
-                  </div>
 
-                  <div class="col-sm-6 mb-3">
-                    <div class="form-group">
-                      <label for="lastName">Upload Certificate</label>
-                      <input type="file" class="btn btn-primary" formControlName="image" (change)="changeImage($event)">
+                    <div class="col-sm-6 mb-3">
+                      <div class="form-group">
+                        <label for="lastName">Upload Certificate</label>
+                        <input type="file" class="btn btn-primary" formControlName="image"
+                          (change)="changeImage($event)">
+                      </div>
                     </div>
+
+
+
+
+
+                    <div class="col-sm-12 mb-3">
+                      <button type="submit" name="submit" class="btn btn-primary">Submit</button>
+                    </div>
+
                   </div>
+                </form>
+                <!-- </div> -->
+                <!-- End Contact Form Wrapper -->
 
-
-
-
-
-                  <div class="col-sm-12 mb-3">
-                    <button type="submit" name="submit" class="btn btn-primary">Submit</button>
-                  </div>
-
-                </div>
-              </form>
-              <!-- </div> -->
-              <!-- End Contact Form Wrapper -->
-
+              </div>
             </div>
           </div>
         </div>
       </div>
     </div>
+
+
+
   </div>
 
 
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/boxicons/2.1.0/css/boxicons.min.css"
+    integrity="sha512-pVCM5+SN2+qwj36KonHToF2p1oIvoU3bsqxphdOIWMYmgr4ZqD3t5DjKvvetKhXGc/ZG5REYTT6ltKfExEei/Q=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <link rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/MaterialDesign-Webfont/5.3.45/css/materialdesignicons.css"
+    integrity="sha256-NAxhqDvtY0l4xn+YVa6WjAcmd94NNfttjNsDmNatFVc=" crossorigin="anonymous" />
 
-</div>
-
-
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/boxicons/2.1.0/css/boxicons.min.css" integrity="sha512-pVCM5+SN2+qwj36KonHToF2p1oIvoU3bsqxphdOIWMYmgr4ZqD3t5DjKvvetKhXGc/ZG5REYTT6ltKfExEei/Q==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/MaterialDesign-Webfont/5.3.45/css/materialdesignicons.css" integrity="sha256-NAxhqDvtY0l4xn+YVa6WjAcmd94NNfttjNsDmNatFVc=" crossorigin="anonymous" />
-
-<div class="container">
+  <div class="container">
     <div class="row align-items-center">
-        <div class="col-md-6">
-            <div class="mb-3">
-                <h3 class="card-title">Interact with Customers <span class="text-muted fw-normal ms-2"></span></h3>
-            </div>
+      <div class="col-md-6">
+        <div class="mb-3">
+          <h3 class="card-title">Interact with Customers <span class="text-muted fw-normal ms-2"></span></h3>
         </div>
+      </div>
 
     </div>
     <hr style="border: 2px solid black;">
-    <div class="row" >
-        <div class="col-xl-3 col-sm-6" *ngFor="let customer of customers">
-            <div class="card">
-                <div class="card-body">
+    <div class="row">
+      <div class="col-xl-3 col-sm-6" *ngFor="let customer of customers">
+        <div class="card border-top border-secondary " style="background-color: #3b72ca1e;">
+          <div class="card-body">
 
-                    <div class="d-flex align-items-center">
-                        <div *ngIf="customer.image != ''">
-                          <img  src="{{ imageCustomerDirectory }}{{ customer.image }}" alt="" class="avatar-md rounded-circle img-thumbnail" />
-                        </div>
-                        <div *ngIf="customer.image === ''">
-                          <img  src="https://media.istockphoto.com/id/1300845620/vector/user-icon-flat-isolated-on-white-background-user-symbol-vector-illustration.jpg?s=612x612&w=0&k=20&c=yBeyba0hUkh14_jgv1OKqIH0CCSWU_4ckRkAoy2p73o=" alt="" class="avatar-md rounded-circle img-thumbnail" />
-                        </div>
-                        <div class="flex-1 ms-3">
-                            <h5 class="font-size-16 mb-1"><a href="#" class="text-dark">{{ customer.name }}</a></h5>
-                            <span class="badge badge-soft-success mb-0">Customer</span>
-                        </div>
-                    </div>
-                    <div class="mt-3 pt-1">
-                        <p class="text-muted mb-0"><i class="mdi mdi-phone font-size-15 align-middle pe-2 text-primary"></i>{{ customer.phone }}</p>
-                        <p class="text-muted mb-0 mt-2"><i class="mdi mdi-email font-size-15 align-middle pe-2 text-primary"></i> {{ customer.email }}</p>
-                        <p class="text-muted mb-0 mt-2"><i class="mdi mdi-google-maps font-size-15 align-middle pe-2 text-primary"></i>{{ customer.address }}</p>
-                    </div>
-                    <div class="d-flex gap-2 pt-4">
-                        <button type="button" class="btn btn-soft-primary btn-sm w-50"><i class="bx bx-user me-1"></i> Profile</button>
-                        <button type="button" class="btn btn-primary btn-sm w-50"><i class="bx bx-message-square-dots me-1"></i> Contact</button>
-                    </div>
-                </div>
+            <div class="d-flex align-items-center">
+              <div *ngIf="customer.image != ''">
+                <img src="{{ imageCustomerDirectory }}{{ customer.image }}" alt=""
+                  class="avatar-md rounded-circle img-thumbnail" />
+              </div>
+              <div *ngIf="customer.image === ''">
+                <img
+                  src="https://media.istockphoto.com/id/1300845620/vector/user-icon-flat-isolated-on-white-background-user-symbol-vector-illustration.jpg?s=612x612&w=0&k=20&c=yBeyba0hUkh14_jgv1OKqIH0CCSWU_4ckRkAoy2p73o="
+                  alt="" class="avatar-md rounded-circle img-thumbnail" />
+              </div>
+              <div class="flex-1 ms-3">
+                <h5 class="font-size-16 mb-1"><a href="#" class="text-dark">{{ customer.name }}</a></h5>
+                <span class="badge badge-soft-success mb-0">Customer</span>
+              </div>
             </div>
+            <div class="mt-3 pt-1">
+              <p class="text-muted mb-0"><i class="mdi mdi-phone font-size-15 align-middle pe-2 text-primary"></i>{{
+                customer.phone }}</p>
+              <p class="text-muted mb-0 mt-2"><i class="mdi mdi-email font-size-15 align-middle pe-2 text-primary"></i>
+                {{ customer.email }}</p>
+              <p class="text-muted mb-0 mt-2"><i
+                  class="mdi mdi-google-maps font-size-15 align-middle pe-2 text-primary"></i>{{ customer.address }}</p>
+            </div>
+            <div class="d-flex gap-2 pt-4">
+              <button type="button" class="btn btn-soft-primary btn-sm w-50"><i class="bx bx-user me-1"></i>
+                Profile</button>
+              <button type="button" class="btn btn-primary btn-sm w-50"><i class="bx bx-message-square-dots me-1"></i>
+                Contact</button>
+            </div>
+          </div>
         </div>
+      </div>
 
 
 
@@ -260,27 +280,30 @@
 
     </div>
     <div class="row g-0 align-items-center pb-4">
-        <div class="col-sm-6">
-            <div><p class="mb-sm-0">Showing 1 to 10 of 57 entries</p></div>
+      <div class="col-sm-6">
+        <div>
+          <p class="mb-sm-0">Showing 1 to 10 of 57 entries</p>
         </div>
-        <div class="col-sm-6">
-            <div class="float-sm-end">
-                <ul class="pagination mb-sm-0">
-                    <li class="page-item ">
-                        <a href="" class="page-link"><i class="mdi mdi-chevron-left"></i></a>
+      </div>
+      <div class="col-sm-6">
+        <div class="float-sm-end">
+          <ul class="pagination mb-sm-0">
+            <li class="page-item ">
+              <a href="" class="page-link"><i class="mdi mdi-chevron-left"></i></a>
 
-                    <li class="page-item"><a href="" class="page-link">prev</a></li>
-                    <li class="page-item"><a href="" class="page-link">|</a></li>
-                    <li class="page-item"><a href="" class="page-link">next</a></li>
+            <li class="page-item"><a href="" class="page-link">prev</a></li>
+            <li class="page-item"><a href="" class="page-link">|</a></li>
+            <li class="page-item"><a href="" class="page-link">next</a></li>
 
-                    <li class="page-item">
-                        <a href="" class="page-link"><i class="mdi mdi-chevron-right"></i></a>
-                    </li>
-                </ul>
-            </div>
+            <li class="page-item">
+              <a href="" class="page-link"><i class="mdi mdi-chevron-right"></i></a>
+            </li>
+          </ul>
         </div>
+      </div>
     </div>
-</div>
+  </div>
+  <app-footer></app-footer>
+</body>
 
 
-<app-footer></app-footer>

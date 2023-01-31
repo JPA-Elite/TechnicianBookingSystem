@@ -4,126 +4,131 @@
     <mdb-tab title="Yesterday"></mdb-tab>
     <mdb-tab title="Pasts"></mdb-tab>
   </mdb-tabs> -->
-<div class="container">
-  <h2>Requests</h2>
-  <hr>
-  <div class="d-flex align-items-start">
-    <div class="container">
-      <h5 for="" style="font-weight: bold;">Customer's List</h5>
-      <div *ngIf="customers.length > 0">
-        <ul class="list-group" style="width: 500px;" *ngFor="let customer of customers; let i = index"  >
-          <li class="list-group-item d-flex justify-content-between align-items-center " [class.active]="selectedIndex === i"
-          (click)="setIndex(i, customer.id)" >
-            {{ customer.name }}
-            <span class="badge badge-dark " style="color:white">{{ i + 1 }}</span>
-          </li>
+<body>
+  <div class="container">
+    <h2>Requests</h2>
+    <hr>
+    <div class="d-flex align-items-start">
+      <div class="container" style="border-radius: 10px;background-color: rgba(0, 0, 0, 0.026);">
+        <h5 for="" style="font-weight: bold;">Customer's List</h5>
+        <div *ngIf="customers.length > 0">
+          <ul class="list-group" style="width: 500px;" *ngFor="let customer of customers; let i = index">
+            <li class="list-group-item d-flex justify-content-between align-items-center "
+              [class.active]="selectedIndex === i" (click)="setIndex(i, customer.id)">
+              {{ customer.name }}
+              <span class="badge badge-dark " style="color:white">{{ i + 1 }}</span>
+            </li>
 
-        </ul>
-        <div aria-label="...">
-          <ul class="pagination">
-            <li class="page-item disabled">
-              <a class="page-link" tabindex="-1">Previous</a>
-            </li>
-            <li class="page-item"><a class="page-link">1</a></li>
-            <li class="page-item active">
-              <a class="page-link" href="#">2 <span class="sr-only">(current)</span></a>
-            </li>
-            <li class="page-item"><a class="page-link">3</a></li>
-            <li class="page-item">
-              <a class="page-link">Next</a>
-            </li>
           </ul>
+          <div aria-label="...">
+            <ul class="pagination">
+              <li class="page-item disabled">
+                <a class="page-link" tabindex="-1">Previous</a>
+              </li>
+              <li class="page-item"><a class="page-link">1</a></li>
+              <li class="page-item active">
+                <a class="page-link" href="#">2 <span class="sr-only">(current)</span></a>
+              </li>
+              <li class="page-item"><a class="page-link">3</a></li>
+              <li class="page-item">
+                <a class="page-link">Next</a>
+              </li>
+            </ul>
+          </div>
         </div>
-      </div>
-      <div *ngIf="customers.length == 0">
-        <br>
-
-        <div class="alert alert-warning " role="alert">
-          Sorry, No customer's request yet.</div>
-
-      </div>
-
-      <br>
-
-    </div>
-
-
-    <div class="container">
-      <h4 for="" style="font-weight: bold;">Content <span class="badge badge-light badge-pill"
-          style="background-color: green;position: relative;top: -5px;" #index>0</span></h4>
-
-      <div class="panel panel-default">
-        <div class="panel-heading" style="font-weight: bold;" >Purpose Request Message</div>
-        <div class="panel-body" >
+        <div *ngIf="customers.length == 0">
           <br>
-          <textarea class="alert alert-warning" #mess readonly style="resize: none;width: 100%;">No message selected</textarea>
-        </div>
-        <hr>
 
-        <div class="panel-heading" style="font-weight: bold;" >Location</div>
-        <div class="panel-body" >
-          <br>
-          <div class="alert alert-warning" #loc>No location selected</div>
-
-        </div>
-        <hr>
-        <div class="panel-heading" style="font-weight: bold;" >Email</div>
-        <div class="panel-body">
-          <br>
-          <div class="alert alert-warning" #em>No email selected</div>
-
-        </div>
-        <hr>
-
-        <div class="panel-heading" style="font-weight: bold;">Phone</div>
-        <div class="panel-body"><br>
-          <div class="alert alert-warning" #ph>No phone selected</div>
-       </div>
-        <hr>
-        <div class="panel-heading" style="font-weight: bold;">Time</div>
-        <div class="panel-body">
-          <div class="alert alert-warning" #ti>No time selected</div>
-        </div>
-        <hr>
-        <div class="panel-heading" style="font-weight: bold;">Date</div>
-        <div class="panel-body" >
-          <div class="alert alert-warning" #da>No date selected</div>
-        </div>
-        <hr>
-        <div class="panel-heading" style="font-weight: bold;">Contact Customer</div>
-        <br>
-        <div class="panel-body d-flex gap-3">
-
-          <button type="submit" class="btn btn-primary"><i class="fa-solid fa-phone-volume"></i></button>
-          <button type="submit" class="btn btn-primary"><i class="fa-solid fa-envelope"></i></button>
-        </div>
-        <br>
-        <div class="panel-body">
           <div class="alert alert-warning " role="alert">
-            You decline customer's request and possible transactions may stop.</div>
+            Sorry, No customer's request yet.</div>
+
+        </div>
+
+        <br>
+
+      </div>
+
+
+      <div class="container">
+        <h4 for="" style="font-weight: bold;">Content <span class="badge badge-light badge-pill"
+            style="background-color: green;position: relative;top: -5px;color: white;" #index>0</span></h4>
+
+        <div class="panel panel-default">
+          <div class="panel-heading" style="font-weight: bold;">Purpose Request Message</div>
+          <div class="panel-body">
+            <br>
+            <textarea class="alert alert-warning" #mess readonly
+              style="resize: none;width: 100%;">No message selected</textarea>
+          </div>
+          <hr>
+
+          <div class="panel-heading" style="font-weight: bold;">Location</div>
+          <div class="panel-body">
+            <br>
+            <div class="alert alert-warning" #loc>No location selected</div>
+
+          </div>
+          <hr>
+          <div class="panel-heading" style="font-weight: bold;">Email</div>
+          <div class="panel-body">
+            <br>
+            <div class="alert alert-warning" #em>No email selected</div>
+
+          </div>
+          <hr>
+
+          <div class="panel-heading" style="font-weight: bold;">Phone</div>
+          <div class="panel-body"><br>
+            <div class="alert alert-warning" #ph>No phone selected</div>
+          </div>
+          <hr>
+          <div class="panel-heading" style="font-weight: bold;">Time</div>
+          <div class="panel-body">
+            <div class="alert alert-warning" #ti>No time selected</div>
+          </div>
+          <hr>
+          <div class="panel-heading" style="font-weight: bold;">Date</div>
+          <div class="panel-body">
+            <div class="alert alert-warning" #da>No date selected</div>
+          </div>
+          <hr>
+          <div class="panel-heading" style="font-weight: bold;">Contact Customer</div>
+          <br>
+          <div class="panel-body d-flex gap-3">
+
+            <button type="submit" class="btn btn-primary"><i class="fa-solid fa-phone-volume"></i></button>
+            <button type="submit" class="btn btn-primary"><i class="fa-solid fa-envelope"></i></button>
+          </div>
+          <br>
+          <div class="panel-body">
+            <div class="alert alert-warning " role="alert">
+              You decline customer's request and possible transactions may stop.</div>
             <div class="d-flex justify-contend-start gap-3">
-              <button class="btn btn-success" >Accept</button>
-              <button class="btn btn-danger" >Decline</button>
+              <button class="btn btn-success">Accept</button>
+              <button class="btn btn-danger">Decline</button>
             </div>
 
-          <br>
-          <br>
-          <br>
-          <br>
+            <br>
+            <br>
+            <br>
+            <br>
+
+          </div>
 
         </div>
-
       </div>
+
+
+
     </div>
 
-
-
   </div>
-
-</div>
-
-
+  <app-footer></app-footer>
+</body>
 
 
 
-<app-footer></app-footer>
+
+
+
+

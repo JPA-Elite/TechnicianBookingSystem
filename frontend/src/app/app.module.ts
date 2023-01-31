@@ -38,6 +38,11 @@ import { ReqTechnicianComponent } from './req-technician/req-technician.componen
 import { TransactionsTechnicianComponent } from './transactions-technician/transactions-technician.component';
 import { DataTablesModule } from 'angular-datatables';
 import { NotificationsTechnicianComponent } from './notifications-technician/notifications-technician.component';
+import { CustomerNavComponent } from './customer-nav/customer-nav.component';
+import { ReqCustomerComponent } from './req-customer/req-customer.component';
+import { TransactionsCustomerComponent } from './transactions-customer/transactions-customer.component';
+import { SettingsCustomerComponent } from './settings-customer/settings-customer.component';
+import { NotificationCustomerComponent } from './notification-customer/notification-customer.component';
 
 @NgModule({
   declarations: [
@@ -59,6 +64,11 @@ import { NotificationsTechnicianComponent } from './notifications-technician/not
     ReqTechnicianComponent,
     TransactionsTechnicianComponent,
     NotificationsTechnicianComponent,
+    CustomerNavComponent,
+    ReqCustomerComponent,
+    TransactionsCustomerComponent,
+    SettingsCustomerComponent,
+    NotificationCustomerComponent,
   ],
   imports: [
     BrowserModule,

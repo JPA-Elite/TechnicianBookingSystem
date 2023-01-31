@@ -1,0 +1,36 @@
+<div class="main">
+  <div class="d-flex align-items-center">
+    <img
+      src="https://cdn.meetingroomapp.com/website/uploads/2020/11/03093137/cropped-MRA-FAVICON-512-5.png"
+      alt="logo"
+      id="logo"
+    />
+    <h4 id="logo-txt" routerLink="/home/1">TechBook</h4>
+  </div>
+
+    <form class="form-inline d-flex gap-1">
+      <input class="form-control mr-sm-3" style="width: 350px" type="search" placeholder="Search...." aria-label="Search">
+      <button class="btn btn-outline-dark my-2 my-sm-0" type="submit">Search</button>
+    </form>
+
+  <div class="d-flex align-items-center gap-3">
+    <ul>
+      <div class="dropdown">
+        <button style="background: none; border: none;" class=" dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          Category
+        </button>
+        <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+          <a class="dropdown-item" href="#">Action</a>
+          <a class="dropdown-item" href="#">Another action</a>
+          <a class="dropdown-item" href="#">Something else here</a>
+        </div>
+      </div>
+      <li routerLink="/request/2">Request</li>
+      <li routerLink="/transactions/2">Transactions</li>
+      <li routerLink="/settings/2">Settings</li>
+      <i class="fa-solid fa-bell" routerLink="/notifications/2"></i>
+    </ul>
+    <button class="btn" routerLink="/"  (click)="logOut()">LOGOUT</button>
+  </div>
+</div>
+

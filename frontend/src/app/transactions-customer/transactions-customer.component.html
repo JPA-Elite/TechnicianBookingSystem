@@ -1,6 +1,6 @@
 <body>
 
-  <app-navbar></app-navbar>
+  <app-customer-nav></app-customer-nav>
   <br><br><br><br>
   <!-- Buttons trigger collapse -->
   <div class="container">
@@ -204,7 +204,7 @@
       <table class="table table-hover ">
         <thead class="bg-dark" style="color: rgba(255, 255, 255, 0.975);font-weight: 400;">
           <th>#ID</th>
-          <th>Customer's Name</th>
+          <th>Technician's Name</th>
           <th>Email</th>
           <th>Phone</th>
           <th>Address</th>
@@ -212,13 +212,13 @@
           <!-- <th>Action</th> -->
         </thead>
         <br>
-        <tbody *ngIf="customers.length" style="background-color: rgba(0, 0, 0, 0.047);">
-          <tr *ngFor="let customer of customers">
-            <td>{{customer.id}}</td>
-            <td>{{customer.name}}</td>
-            <td>{{customer.email}}</td>
-            <td>{{customer.phone}}</td>
-            <td style="height: 100px;width: 200px;" readonly>{{customer.address}}</td>
+        <tbody *ngIf="technicians.length" style="background-color: rgba(0, 0, 0, 0.047);">
+          <tr *ngFor="let technician of technicians">
+            <td>{{technician.id}}</td>
+            <td>{{technician.name}}</td>
+            <td>{{technician.email}}</td>
+            <td>{{technician.phone}}</td>
+            <td style="height: 100px;width: 200px;" readonly>{{technician.address}}</td>
             <td>
               <div class="alert alert-warning text-center">Pending</div>
             </td>

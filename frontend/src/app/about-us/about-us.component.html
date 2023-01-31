@@ -1,4 +1,32 @@
 <body>
+  <nav >
+    <div class="d-flex align-items-center">
+      <img
+        src="https://cdn.meetingroomapp.com/website/uploads/2020/11/03093137/cropped-MRA-FAVICON-512-5.png"
+        alt="logo"
+        id="logo"
+      />
+      <h4 id="logo-txt" routerLink="/" style="cursor: pointer;">TechBook</h4>
+    </div>
+
+    <div class="navLinks">
+      <ul>
+
+        <li><a routerLink="/about-us">About</a></li>
+        <div class="dropdown">
+        <li><button class="dropbtn" style="color: white;">SignUp</button></li>
+          <div class="dropdown-content">
+            <a routerLink="/register/1">As Technician</a>
+            <a routerLink="/register/2">As Customer</a>
+          </div>
+        </div>
+        <li><a routerLink="/login">Login</a></li>
+
+
+      </ul>
+    </div>
+  </nav>
+
   <div class="about-section">
     <h1>About Us</h1>
     <br>
@@ -7,7 +35,7 @@
        malfunctioning air conditioner, computer, washing machine, or
         television shouldn't be a frustrating experience. TechBook makes
          it easy, affordable, and convenient to have your home appliances
-         repaired. Just visit our website, TechBook.com.
+         repaired.
     </h4>
   </div>
 
@@ -16,7 +44,7 @@
     <div class="team">
       <div class="team_member">
         <div class="team_img">
-          <img [src]="Logo" alt="Team_image">
+          <img src="https://scontent.fmnl4-5.fna.fbcdn.net/v/t39.30808-6/321503042_684308920137265_7383577542360719213_n.jpg?_nc_cat=111&ccb=1-7&_nc_sid=09cbfe&_nc_ohc=EdOfj9KgK5UAX-9ZNga&_nc_oc=AQkVmxRwcveniaS7ui6EyRPj9tABxOnXwuU4dRrL89yQeTlrmXdbD-sS24fgewF7QBw&_nc_ht=scontent.fmnl4-5.fna&oh=00_AfBZj4btw2HgM41aa6cvotWFtlZ9l_PYHQj2GroiDGadiw&oe=63DD8521" alt="Team_image">
         </div>
         <h3>Joshua Algadipe</h3>
         <p class="role">Backend Developer</p>
@@ -47,6 +75,8 @@
       </div>
     </div>
   </div>
+
+<app-footer></app-footer>
 
   </body>
 

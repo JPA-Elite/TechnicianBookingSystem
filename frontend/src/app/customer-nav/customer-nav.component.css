@@ -1,0 +1,61 @@
+.main{
+  background-color:aquamarine ;
+  padding: 14px 30px 10px 30px;
+  display: flex;
+  justify-content:space-between;
+  align-items: center;
+  position: fixed;
+  top:0;
+  width: 100%;
+  z-index: 90;
+}
+#logo{
+  width: 40px;
+}
+#logo-txt {
+  position: relative;
+  top: 3px;
+  left:5px;
+  cursor:pointer;
+}
+ul{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 12px;
+  position: relative;
+  top:6px;
+  cursor: pointer;
+}
+ul li{
+  list-style-type: none;
+  cursor: pointer;
+  transition: all;
+  color: #004242;
+  font-weight: bold;
+}
+
+.btn{
+  background-color: #004242;
+  color: white;
+}
+h5{
+  color: #004242;
+}
+li{
+  font-weight: bold;
+  font-size: 15px;
+  list-style-type:none ;
+}
+ul li:hover{
+  text-decoration: underline;
+}
+
+#userlogo{
+  width: 40px;
+  position: relative;
+  top:-1px;
+}
+.dropdown-content{
+  background-color: #004242;
+}

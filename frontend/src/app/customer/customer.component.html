@@ -1,29 +1,4 @@
-<div class="main">
-  <div class="d-flex align-items-center">
-    <img
-      src="https://cdn.meetingroomapp.com/website/uploads/2020/11/03093137/cropped-MRA-FAVICON-512-5.png"
-      alt="logo"
-      id="logo"
-    />
-    <h4 id="logo-txt" routerLink="/">TechBook</h4>
-  </div>
-
-    <form class="form-inline d-flex gap-1">
-      <input class="form-control mr-sm-3" style="width: 350px" type="search" placeholder="Search...." aria-label="Search">
-      <button class="btn btn-outline-dark my-2 my-sm-0" type="submit">Search</button>
-    </form>
-
-  <div class="d-flex align-items-center gap-3">
-    <ul>
-      <li>Book</li>
-      <li>Request</li>
-      <li routerLink="/transactions">Transactions</li>
-      <li>Settings</li>
-      <i class="fa-solid fa-bell"></i>
-      <button class="btn" routerLink="/login" *ngIf="loggedIn" (click)="logOut()">LOGOUT</button>
-    </ul>
-  </div>
-</div>
+<app-customer-nav></app-customer-nav>
 
 <div style="background:rgba(127, 255, 212, 0.3);padding:120px 0px 30px 0px; ">
   <h1 class="text-center"*ngIf="user">Welcome {{ user.name }}! </h1>
