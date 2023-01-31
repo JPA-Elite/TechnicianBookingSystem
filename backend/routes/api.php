@@ -33,7 +33,12 @@ Route::middleware('auth:sanctum')->group(function () {
     Route::get("technician", [TechnicianAccountController::class, 'index']);
     Route::get("technician/{id}", [TechnicianAccountController::class, 'show']);
     Route::put("technician/{id}", [TechnicianAccountController::class, 'update']);
+
     Route::patch("technician/{id}", [TechnicianAccountController::class, 'update']);
+
+    Route::put("technician-password/{id}", [TechnicianAccountController::class, 'update']);
+    Route::patch("technician-password/{id}", [TechnicianAccountController::class, 'update']);
+    
     Route::delete("technician/{id}", [TechnicianAccountController::class, 'destroy']);
 
     Route::get("customer", [CustomerAccountController::class, 'index']);

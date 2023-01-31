@@ -99,6 +99,8 @@ class TechnicianAccountController extends Controller
     /**
      * Update the specified
      */
+
+
     public function update(Request $request, $id)
     {
         // $validated = $request->validate([
@@ -114,7 +116,7 @@ class TechnicianAccountController extends Controller
                     'message' => 'certificate Not Found.',
                 ], 404);
             }
-            $cer->image = $request->image;
+            // $cer->image = $request->image;
 
             if ($request->image) {
                 // Public storage
