@@ -59,6 +59,13 @@ return [
             'visibility' => 'public',
             'throw' => false,
         ],
+        'cus_profile_images' => [
+            'driver' => 'local',
+            'root' => storage_path('app/public/cus_profile_images'),
+            'url' => env('APP_URL').'/storage',
+            'visibility' => 'public',
+            'throw' => false,
+        ],
 
 
         's3' => [
@@ -89,6 +96,9 @@ return [
     'links' => [
         public_path('storage') => storage_path('app/public'),
         public_path('cer_images') => storage_path('app/public/cer_images'),
+        public_path('tech_profile_images') => storage_path('app/public/tech_profile_images'),
+        public_path('cus_profile_images') => storage_path('app/public/cus_profile_images'),
+
     ],
 
 ];

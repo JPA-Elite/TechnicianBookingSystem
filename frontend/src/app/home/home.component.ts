@@ -14,13 +14,16 @@ export class HomeComponent implements OnInit {
   user: any;
   loggedIn = false;
   scheds: any;
-  customers:any;
-  countCustomer:any;
+  customers: any;
+  filteredcustomers: any = [];
+  countCustomer: any;
+  imageCustomerDirectory: any = "http://localhost:8000/storage/cus_profile_images/";
 
   @ViewChild('errconcern') errconcern!: ElementRef;
   @ViewChild('succconcern') succconcern!: ElementRef;
   @ViewChild('concern_message') concern_message!: ElementRef;
   @ViewChild('modalSearch') modalSearch!: ElementRef;
+  @ViewChild('search') search!: ElementRef;
 
   constructor(private http: HttpClient, private router: Router, private articleService: ArticleService, private fb: FormBuilder) {
 
@@ -29,13 +32,42 @@ export class HomeComponent implements OnInit {
     this.customers = this.articleService
       .listCustomers()
       .subscribe((customer: any) => {
+        // console.log(customer[0].name);
         this.customers = customer;
+
         console.log(this.customers);
-        this.countCustomer = customer.length;
+
+
       });
+  }
+  filteredCustomers() {
+    this.filteredcustomers = [];
+    var data = new Array();
+    for (const cus in this.customers) {
+      if (this.customers[cus].name.toLowerCase().indexOf(this.search.nativeElement.value) > -1) {
+
+
+        data.push(this.customers[cus]);
+
+
+
+
+      } else {
+        console.log(this.customers[cus].name.toLowerCase() + " none");
+
+      }
+
+    }
+    this.filteredcustomers = data;
+    this.countCustomer =   this.filteredcustomers.length;
+    console.log(this.filteredcustomers[0]);
+
+
   }
   ngOnInit() {
     this.showCustomers();
+
+
 
     const headers = new HttpHeaders({
       'Authorization': `Bearer ${localStorage.getItem('token')}`
@@ -78,7 +110,7 @@ export class HomeComponent implements OnInit {
       this.scheds_data = sched;
       console.log(this.scheds_data);
       console.log("successfully added!");
-       window.location.reload();
+      window.location.reload();
     }
 
 
@@ -134,7 +166,7 @@ export class HomeComponent implements OnInit {
       });
   }
 
-  errRemove(){
+  errRemove() {
     this.errconcern.nativeElement.style.display = 'none';
     this.succconcern.nativeElement.style.display = 'none';
   }
@@ -152,7 +184,7 @@ export class HomeComponent implements OnInit {
 
   }
 
-  dismissModal(){
+  dismissModal() {
     this.modalSearch.nativeElement.style.display = 'none';
   }
 }

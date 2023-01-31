@@ -68,8 +68,11 @@ export class ArticleService {
     return this.http.post(this.url+ `/api/feedback` , feed, this.httpOptions);
   }
   addCertificate(cer:any): Observable<any>{
+    const cerHTTP = {
+      headers : new HttpHeaders({ 'Authorization': `Bearer ${localStorage.getItem('token')}`})
+    };
 
-    return this.http.post(this.url+ `/api/certificate` , cer,this.httpOptions);
+    return this.http.post(this.url+ `/api/certificate` , cer,cerHTTP);
   }
   updateTechnicianAccount(id:any, tech:any): Observable<any>{
     // const request = request.clone({

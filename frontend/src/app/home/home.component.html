@@ -6,9 +6,9 @@
       <h4 id="logo-txt">TechBook</h4>
     </div>
 
-    <form class="form-inline d-flex gap-1">
+    <form class="form-inline d-flex gap-1" (submit)="filteredCustomers()">
       <input class="form-control mr-sm-3" style="width: 350px" type="search" placeholder="Search...."
-        aria-label="Search">
+        aria-label="Search" #search>
       <button class="btn btn-outline-dark my-2 my-sm-0" type="submit" data-toggle="modal"
         data-target="#exampleModalLong">Search</button>
     </form>
@@ -46,30 +46,35 @@
               </div> -->
               <div class="col-md-10 col-md-pull-3">
                 <p class="search-results-count">About {{ countCustomer }} results</p>
-                <section class="search-result-item" *ngFor="let cus of customers;let i = index">
+                <section class="search-result-item" *ngFor="let cus of filteredcustomers;let i = index">
                   <div style="display: none;"></div>
-                  <a class="image-link" href="#"><img class="image"
-                      src="https://bootdey.com/img/Content/avatar/avatar1.png">
-                  </a>
-                  <div class="search-result-item-body">
-                    <div class="row">
-                      <div class="col-sm-9">
-                        <h2 class="search-result-item-heading " style="font-weight: bold;"><a href="">john doe</a></h2>
-                        <p class="info">Location: {{ cus.address }}</p>
-                        <p class="info">Phone: {{ cus.phone }}</p>
-                        <p class="info">Email: {{ cus.email }}</p>
+                  <div id="{{ i }}" >
+                    <a class="image-link rounded-circle" href="#"><img class="image"
+                        src="{{ imageCustomerDirectory }}{{ cus.image }}">
+                    </a>
+                    <div class="search-result-item-body">
+                      <div class="row">
+                        <div class="col-sm-9">
+                          <h2 class="search-result-item-heading " style="font-weight: bold;"><a href="">{{ cus.name }}</a>
+                          </h2>
+                          <p class="info">Location: {{ cus.address }}</p>
+                          <p class="info">Phone: {{ cus.phone }}</p>
+                          <p class="info">Email: {{ cus.email }}</p>
 
 
 
 
-                      </div>
-                      <div class="col-sm-3 text-align-center">
-                        <a class="btn btn-primary btn-info btn-sm" href="" style="margin-bottom: 5px;">Contact</a>
-                        &nbsp;
-                        <a class="btn btn-primary btn-info btn-sm" href="">Message</a>
+                        </div>
+                        <div class="col-sm-3 text-align-center">
+                          <a class="btn btn-primary btn-info btn-sm" href="" style="margin-bottom: 5px;">Contact</a>
+                          &nbsp;
+                          <a class="btn btn-primary btn-info btn-sm" href="">Message</a>
+                        </div>
                       </div>
                     </div>
+
                   </div>
+
                 </section>
 
                 <div class="text-align-center">
