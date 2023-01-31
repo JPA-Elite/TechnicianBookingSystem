@@ -61,6 +61,9 @@ export class ArticleService {
   showSchedules(id:number): Observable<any>{
     return this.http.get(this.url+ `/api/schedule/` + id , this.httpOptions);
   }
+  showNotificationTech(id:number): Observable<any>{
+    return this.http.get(this.url+ `/api/technician-notification/` + id , this.httpOptions);
+  }
   addSchedules(scheds:any): Observable<any>{
     return this.http.post(this.url+ `/api/schedule` , scheds, this.httpOptions);
   }
@@ -74,7 +77,7 @@ export class ArticleService {
 
     return this.http.post(this.url+ `/api/certificate` , cer,cerHTTP);
   }
-  updateTechnicianAccount(id:any, tech:any): Observable<any>{
+  updateTechnicianAccount( tech:any, id:any): Observable<any>{
     // const request = request.clone({
     //   headers : request.headers
     //     .set('Authorization', 'Bearer ' + token)
@@ -82,9 +85,10 @@ export class ArticleService {
     //     .set('Content-Type', 'multipart/form-data;boundary=§§§')
     // });
     const http = {
-      headers : new HttpHeaders({  'Accept' : 'application/json', 'Authorization': `Bearer ${localStorage.getItem('token')}` })
+      headers : new HttpHeaders({  'Authorization': `Bearer ${localStorage.getItem('token')}` })
     };
-    return  this.http.put('http://localhost:8000/api/technician/' + id, tech,http);
+    console.log(tech.name);
+    return  this.http.put(this.url+'/api/technician/' + id, tech ,http);
   }
   updateCustomerAccount(id:any, customer:any): Observable<any>{
     // const request = request.clone({

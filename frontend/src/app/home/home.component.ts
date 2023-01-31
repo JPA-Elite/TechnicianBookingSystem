@@ -131,7 +131,7 @@ export class HomeComponent implements OnInit {
       console.log("successfully added!");
       this.succconcern.nativeElement.style.display = 'block';
       this.concern_message.nativeElement.value = '';
-    },
+    },  
       (errorResponse: HttpErrorResponse) => {
         console.log('Cannot register!');
         // this.error_data = errorResponse.error.errors;
