@@ -29,7 +29,8 @@ class TechnicianAccount extends Model
         'type',
         'image',
         'email_verified_at',
-        'remember_token'
+        "created_at",
+        "updated_at",
 
     ];
     protected $hidden = [

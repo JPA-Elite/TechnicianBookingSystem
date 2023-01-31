@@ -5,8 +5,8 @@ namespace App\Http\Controllers;
 use App\Models\TechnicianAccount;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Hash;
-use Illuminate\Support\Str;
 use Illuminate\Support\Facades\Storage;
+use Illuminate\Support\Str;
 
 class TechnicianAccountController extends Controller
 {
@@ -100,26 +100,21 @@ class TechnicianAccountController extends Controller
      * Update the specified
      */
 
-
     public function update(Request $request, $id)
     {
-        // $validated = $request->validate([
-        //     'name' => 'unique:customer_accounts',
-        //     'email' => 'email|unique:customer_accounts,email',
-
-        // ]);
 
         try {
             $cer = TechnicianAccount::find($id);
             if (!$cer) {
                 return response()->json([
-                    'message' => 'certificate Not Found.',
+                    'message' => 'account Not Found.',
                 ], 404);
             }
             // $cer->image = $request->image;
 
             if ($request->image) {
                 // Public storage
+
                 $storage = Storage::disk('tech_profile_images');
 
                 // Old iamge delete
@@ -130,60 +125,66 @@ class TechnicianAccountController extends Controller
                 // Image name
                 $cfn = Str::random(32) . "." . $request->image->getClientOriginalExtension();
                 TechnicianAccount::find($id)->update([
+
                     'name' => $request->name,
-                    'email' => $request->email,
-                    'address' => $request->address,
                     'gender' => $request->gender,
-                    'age' => $request->age,
                     'birthdate' => $request->birthdate,
+                    'age' => $request->age,
+                    'address' => $request->address,
                     'phone' => $request->phone,
+                    'email' => $request->email,
                     'valid_id' => $request->valid_id,
                     'category' => $request->category,
+                    'password' => Hash::make($request->password),
+                    'type' => Hash::make($request->password),
                     'image' => $cfn,
+                    'email_verified_at' => $request->email_verified_at,
+                    "created_at" => $request->created_at,
+                    "updated_at" => $request->updated_at,
+
                 ]);
+
+                return response()->json([
+                    'message' => "Account successfully updated and stored.",
+                ], 200);
 
                 // Image save in public folder
                 $storage->put($cfn, file_get_contents($request->image));
-            }
-            else{
-                TechnicianAccount::find($id)->update([
+            } else {
+
+                 TechnicianAccount::find($id)->update([
                     'name' => $request->name,
-                    'email' => $request->email,
-                    'address' => $request->address,
                     'gender' => $request->gender,
-                    'age' => $request->age,
                     'birthdate' => $request->birthdate,
+                    'age' => $request->age,
+                    'address' => $request->address,
                     'phone' => $request->phone,
+                    'email' => $request->email,
                     'valid_id' => $request->valid_id,
-                    'category' => $request->category
+                    'category' => $request->category,
+                    'password' => Hash::make($request->password),
+                    'type' => Hash::make($request->password),
+                    'email_verified_at' => $request->email_verified_at,
+                    "created_at" => $request->created_at,
+                    "updated_at" => $request->updated_at,
+
                 ]);
+                return response()->json([
+                    'message' => "Account successfully updated but not stored.",
+                    'info' => $request -> image
+                ], 200);
             }
 
             // Return Json Response
-            return response()->json([
-                'message' => "Product successfully updated.",
-            ], 200);
+
         } catch (Exception $e) {
-            // Return Json Response
-            return response()->json([
-                'message' => "Something went really wrong!",
-            ], 500);
+
         }
 
-        return TechnicianAccount::find($id)->update([
-            'name' => $request->name,
-            'email' => $request->email,
-            'address' => $request->address,
-            'gender' => $request->gender,
-            'age' => $request->age,
-            'birthdate' => $request->birthdate,
-            'phone' => $request->phone,
-            'valid_id' => $request->valid_id,
-            'category' => $request->category,
-            'password' => Hash::make($request->password),
-            'image' => $request->image,
+        // return [
+        //     "message"=> $request->image != ''
+        // ];
 
-        ]);
     }
 
     /**
