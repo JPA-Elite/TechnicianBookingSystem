@@ -60,5 +60,7 @@ export class ReqTechnicianComponent implements OnInit {
 
   ngOnInit(): void {
     this.showCustomers();
+
+
   }
 }

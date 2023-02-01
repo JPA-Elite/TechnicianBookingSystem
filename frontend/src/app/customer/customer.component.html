@@ -1,185 +1,309 @@
 <app-customer-nav></app-customer-nav>
 
-<div style="background:rgba(127, 255, 212, 0.3);padding:120px 0px 30px 0px; ">
-  <h1 class="text-center"*ngIf="user">Welcome {{ user.name }}! </h1>
-  <div class="maincontainer">
-    <div class="subcontainer">
-      <h6 style="font-weight: bold;">Total Technicians:</h6>
-      <div>
-        <p>4 has been processed!</p>
-      </div>
-    </div>
-    <div class="subcontainer">
-      <h6 style="font-weight: bold;">Active Technicians:</h6>
-      <div>
-        <p>4 has been processed!</p>
-      </div>
-    </div>
-    <div class="subcontainer">
-      <h6 style="font-weight: bold;">Pending Technicians:</h6>
-      <div>
-        <p>4 has been processed!</p>
-      </div>
-    </div>
-    <div class="subcontainer">
-      <h6 style="font-weight: bold;">Cancelled Technicians:</h6>
-      <div>
-        <p>4 has been processed!</p>
-      </div>
-    </div>
-
-  </div>
-</div>
-
-
-<div class="d-flex align-items-start gap-4 schedule_page">
-  <div class=" sched">
-    <br>
-    <div class="d-flex align-items-center gap-2" style="margin-bottom: 15px; margin-left: 20px;">
-      <img src="../../assets/images/timetable.png" id="sched_image" alt="time" srcset="">
-      <h5>Set your schedule!</h5>
-    </div>
-    <br>
-    <div>
-      <div class="d-flex align-items-center gap-3" style="margin-left: 52px;">
+<body>
+  <div style="background:rgba(255, 255, 255, 0.3);padding:120px 0px 30px 0px; ">
+    <h1 class="text-center" *ngIf="user">Welcome <b class="text-primary">{{ user.name }}</b>! </h1>
+    <div class="maincontainer">
+      <div class="subcontainer text-center">
+        <!-- <h6 style="font-weight: bold;">Total Technicians:</h6> -->
+        <button type="button" class="btn btn-primary position-relative">
+          Total Technicians:
+          <span
+            class="position-absolute top-0 start-100 translate-middle p-2 bg-success border border-light rounded-circle">
+            <span class="visually-hidden">Total Technicians:</span>
+          </span>
+        </button>
         <div>
-          <small for="date_input">Choose your date</small><br>
-          <input type="date" class="date_input" style="width: 205px;">
 
-        </div>
-        <div>
-          <small for="date_input">Start time</small><br>
-          <input type="time" class="date_input" style="width: 205px;">
-
-        </div>
-        <div>
-          <small for="date_input">End time</small><br>
-          <input type="time" class="date_input" style="width: 205px;">
-
+          <p class="" style="margin-top:10px ;">4 has been processed!</p>
         </div>
       </div>
-      <div class="" style="padding-top: 20px; margin-left: 52px;">
-        <small>Write notes here. (Optional)</small><br>
-        <textarea class="text" name="" id="" cols="80" rows="10" style="resize: none;padding: 20px; border: solid 2px #004242;"
-          placeholder="Write any here..."></textarea>
+      <div class="subcontainer">
+        <button type="button" class="btn btn-primary position-relative">
+          Active Technicians:
+          <span
+            class="position-absolute top-0 start-100 translate-middle p-2 bg-success border border-light rounded-circle">
+            <span class="visually-hidden">Active Technicians:</span>
+          </span>
+        </button>
+        <div>
+          <p style="margin-top:10px ;">4 has been processed!</p>
+        </div>
       </div>
-    </div>
-    <br>
-    <button type="button" class="btn  " style="margin-left: 50px;">Add Schedule</button>
-<br><br><br>
-
-
-  </div>
-  <div class="list" style="width: 540px;padding-top: 50px;">
-    <div class="d-flex align-items-center gap-3" style="margin-bottom: 15px;width: 220px;margin-left: 100px;">
-      <!-- <img src="../../assets/images/timetable.png" id="sched_image" alt="time" srcset=""> -->
-      <h5>List of your schedules!</h5>
-    </div>
-    <table class="table table-striped" >
-      <thead>
-        <tr>
-          <th scope="col">#</th>
-          <th scope="col">Date</th>
-          <th scope="col">Time Started</th>
-          <th scope="col">Time Ended</th>
-          <th scope="col">Status</th>
-        </tr>
-      </thead>
-      <tbody class="table-group-divider">
-        <tr>
-          <th scope="row">1</th>
-          <td>Janaury 4, 2023</td>
-          <td>6:45 AM</td>
-          <td>9:00 PM</td>
-          <td>Done</td>
-        </tr>
-        <tr>
-          <th scope="row">2</th>
-          <td>Janaury 6, 2023</td>
-          <td>6:45 AM</td>
-          <td>9:00 PM</td>
-          <td>Ongoing</td>
-        </tr>
-        <tr>
-          <th scope="row">3</th>
-          <td>Janaury 9, 2023</td>
-          <td>6:45 AM</td>
-          <td>9:00 PM</td>
-          <td>Ongoing</td>
-        </tr>
-      </tbody>
-    </table>
-  </div>
-
-</div>
-
-
-<section id="contact" style="background:rgba(127, 255, 212, 0.3);padding-bottom: 30px;">
-
-  <h2 class="section-header">Do you have Concerns?</h2>
-  <p style="text-align: center;">Send us a message!</p>
-
-  <div class="d-flex align-items-start gap-3"
-    style="border: 1px solid rgba(0, 0, 0, 0.32);padding: 20px;margin: 20px 50px 20px 50px;">
-    <img
-      src="https://www.gmc-uk.org/-/media/gmc-site/ethical-guidance/learning-materials/dr-doyle-dr-foster.jpg?mw=660&hash=9DAC4DB5A8745CFE6F82588FE275B237B482B56A"
-      alt="" style="width: 400px;border-radius: 15px;">
-    <div>
-      <div class="d-flex align-items-center">
-        <div class="form-floating mb-3">
-          <input type="email" class="form-control" id="floatingInputDisabled" placeholder="name@example.com">
-          <label for="floatingInputDisabled">Name</label>
-        </div>&nbsp;
-
-        <div class="form-floating mb-3">
-          <input type="email" class="form-control" id="floatingInputDisabled" placeholder="name@example.com">
-          <label for="floatingInputDisabled">Phone</label>
-        </div>&nbsp;
-
-
-        <div class="form-floating mb-3">
-          <input type="email" class="form-control" id="floatingInputDisabled" placeholder="name@example.com">
-          <label for="floatingInputDisabled">Email address</label>
-        </div><br>
-
+      <div class="subcontainer">
+        <button type="button" class="btn btn-primary position-relative">
+          Pending Technicians:
+          <span
+            class="position-absolute top-0 start-100 translate-middle p-2 bg-warning border border-light rounded-circle">
+            <span class="visually-hidden">Pending Technicians:</span>
+          </span>
+        </button>
+        <div>
+          <p style="margin-top:10px ;">4 has been processed!</p>
+        </div>
+      </div>
+      <div class="subcontainer">
+        <button type="button" class="btn btn-primary position-relative">
+          Cancelled Technicians:
+          <span
+            class="position-absolute top-0 start-100 translate-middle p-2 bg-danger border border-light rounded-circle">
+            <span class="visually-hidden">Cancelled Technicians:</span>
+          </span>
+        </button>
+        <div>
+          <p style="margin-top:10px ;">4 has been processed!</p>
+        </div>
       </div>
 
-
-
-      <div class="form-floating mb-3">
-        <textarea class="form-control" placeholder="Leave a comment here" id="floatingTextarea2Disabled"
-          style="height: 130px;resize: none;border: solid 2px #004242;"></textarea>
-        <label for="floatingTextarea2Disabled">Your text here...</label>
-
-      </div>
-      <button type="button" class="btn btn-primary ">Send Concern</button>
-      <div style="padding-top: 20px;">
-        <p style="color: rgba(0, 0, 0, 0.707);">By providing the information above, be sure you agree to our terms and
-          condition.</p>
-      </div>
-
-
-
-
-    </div>
-    <div>
-      <div class="d-flex align-items-center gap-2">
-        <img src="../../assets/images/brazil-.png" alt="" style="width: 30px;">
-        <p style="font-weight: bold;">Talamban, Cebu City</p>
-      </div>
-      <div class="d-flex align-items-center gap-2">
-        <img src="../../assets/images/communication.png" alt="" style="width: 30px;">
-        <p style="font-weight: bold;">(+63) 9319127640</p>
-      </div>
-      <div class="d-flex align-items-center gap-2">
-        <img src="../../assets/images/chat.png" alt="" style="width: 30px;">
-        <p style="font-weight: bold;">techbook@gmail.com</p>
-      </div>
     </div>
   </div>
 
+  <br><br>
+  <div class="container text-center">
+    <p>
+      <button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#collapseExample"
+        aria-expanded="true" aria-controls="collapseExample">
+        Your Schedules
+      </button>
+    </p>
+  </div>
 
 
-</section>
-<app-footer></app-footer>
+  <div class="collapse" id="collapseExample">
+    <div class="d-flex align-items-start gap-4 schedule_page">
+      <form [formGroup]="form" class=" sched" style="height:540px;overflow: auto;">
+        <br>
+        <div class="d-flex align-items-center gap-2" style="margin-bottom: 15px; margin-left: 20px;">
+          <img src="../../assets/images/timetable.png" id="sched_image" alt="time" srcset="">
+          <h5>Set your schedule!</h5>
+        </div>
+        <div class="container">
+          <div class="container alert alert-success">
+            <p>Here you can put all the schedules wherein you are available on that time and date for your transactions.
+            </p>
+          </div>
+        </div>
+
+        <br>
+        <div>
+          <div class="d-flex align-items-center gap-3" style="margin-left: 52px;">
+            <div>
+              <small for="date_input">Starting date</small><br>
+              <input type="date" class="date_input" style="width: 345px;" required #startD>
+
+            </div>
+            <div>
+              <small for="date_input">Ending date</small><br>
+              <input type="date" class="date_input" style="width: 345px;" required #endD>
+
+
+            </div>
+          </div>
+          <br>
+          <div class="d-flex align-items-center gap-3" style="margin-left: 52px;">
+
+            <div>
+              <small for="date_input">Start time</small><br>
+              <input type="time" class="date_input" style="width: 345px;" #startT>
+
+            </div>
+            <div>
+              <small for="date_input">End time</small><br>
+              <input type="time" class="date_input" style="width: 345px;" #endT>
+
+            </div>
+          </div>
+          <div class="" style="padding-top: 20px; margin-left: 52px;">
+            <small>Write notes here. (Optional)</small><br>
+            <textarea class="text form-control" name="" id="" cols="80" rows="10"
+              style="resize: none;padding: 20px; border: solid 2px #004242;" placeholder="Write any here..."
+              formControlName="description" required #desc></textarea>
+
+          </div>
+        </div>
+        <br>
+        <!-- Button trigger modal -->
+        <button type="button" style="margin-left: 50px;" class="btn btn-primary" data-toggle="modal"
+          data-target="#exampleModal">
+          Add Schedule
+        </button>
+        <!-- <button type="submit" class="btn  " style="margin-left: 50px;">Add Schedule</button> -->
+        <br><br><br>
+
+
+      </form>
+
+
+
+      <div class="list" style="width: 540px;padding-top: 50px;">
+        <p>
+          <button class="btn btn-primary" type="button" data-mdb-toggle="collapse"
+            data-mdb-target="#collapseWidthExample" aria-expanded="true" aria-controls="collapseWidthExample">
+            Show your Schedules
+          </button>
+        </p>
+        <div style="min-height: 120px;">
+          <div class="collapse collapse-vertical" id="collapseWidthExample">
+            <div class="d-flex align-items-center gap-3" style="margin-bottom: 15px;width: 220px;margin-left: 0;">
+              <img src="../../assets/images/timetable.png" id="sched_image" alt="time" srcset="">
+              <h5>List of your schedules!</h5>
+            </div>
+            <div style="width: 550px;height:540px;overflow: auto;">
+
+              <table class="table table-striped">
+                <thead>
+                  <tr>
+                    <th scope="col">#</th>
+                    <th scope="col">Date Started</th>
+                    <th scope="col">Date Ended</th>
+                    <th scope="col">Time Started</th>
+                    <th scope="col">Time Ended</th>
+                    <th scope="col">Status</th>
+                    <th scope="col">Notes</th>
+                  </tr>
+                </thead>
+                <tbody class="table-group-divider" *ngIf="scheds.length > 0">
+                  <tr *ngFor="let sched of scheds;let i = index">
+                    <th scope="row">{{ i + 1 }}</th>
+                    <td>{{ sched.date_started }}</td>
+                    <td>{{ sched.date_ended}}</td>
+                    <td>{{ sched.time_started }}</td>
+                    <td>{{ sched.date_ended }}</td>
+                    <td>
+
+                      <div class="alert alert-success text-center" *ngIf="sched.status === 'Done'"> {{ sched.status }}
+                      </div>
+                      <div class="alert alert-warning text-center" *ngIf="sched.status === 'Ongoing'"> {{ sched.status
+                        }}
+                      </div>
+                    </td>
+                    <td>
+                      <div class="alert alert-success" style="width:400px">
+                        {{ sched.description }}
+                      </div>
+                    </td>
+                  </tr>
+
+                </tbody>
+              </table>
+
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+
+  </div>
+
+  <br><br>
+
+  <section id="contact" style="background:rgba(127, 255, 212, 0.3);padding-bottom: 30px;">
+
+    <h2 class="section-header">Do you have Concerns or Feedbacks?</h2>
+    <p style="text-align: center;">Send us a message here!</p>
+
+    <div class="d-flex align-items-start gap-3"
+      style="border: 1px solid rgba(0, 0, 0, 0.32);padding: 20px;margin: 20px 50px 20px 50px;">
+      <img
+        src="https://www.gmc-uk.org/-/media/gmc-site/ethical-guidance/learning-materials/dr-doyle-dr-foster.jpg?mw=660&hash=9DAC4DB5A8745CFE6F82588FE275B237B482B56A"
+        alt="" style="width: 400px;border-radius: 15px;">
+      <div>
+        <div class="d-flex align-items-center">
+          <div class="form-floating mb-3">
+            <input type="text" class="form-control" id="floatingInputDisabled" placeholder="name@example.com"
+              value="{{ user.name }}" disabled>
+            <label for="floatingInputDisabled">Name</label>
+          </div>&nbsp;
+
+          <div class="form-floating mb-3">
+            <input type="text" class="form-control" id="floatingInputDisabled" placeholder="name@example.com"
+              value="{{ user.phone }}" disabled>
+            <label for="floatingInputDisabled">Phone</label>
+          </div>&nbsp;
+
+
+          <div class="form-floating mb-3">
+            <input type="email" class="form-control" id="floatingInputDisabled" placeholder="name@example.com"
+              value="{{ user.email }}" disabled>
+            <label for="floatingInputDisabled">Email address</label>
+          </div><br>
+
+        </div>
+
+
+
+        <div class="form-floating mb-3">
+          <textarea class="form-control" placeholder="Leave a comment here" id="floatingTextarea2Disabled"
+            style="height: 130px;resize: none;border: solid 2px #004242;" (click)="errRemove()"
+            #concern_message></textarea>
+          <label for="floatingTextarea2Disabled">Your text here...</label>
+
+        </div>
+        <button type="button" class="btn btn-primary " (click)="addConcern(concern_message.value)">Send Concern</button>
+        <br><br>
+        <div class="alert alert-danger  concern-alert" #errconcern>The message field is required!</div>
+        <div class="alert alert-success  concern-alert" #succconcern>Your concern was successfully send!</div>
+        <div style="padding-top: 20px;">
+          <p style="color: rgba(0, 0, 0, 0.707);">By providing the information above, be sure you agree to our terms and
+            condition.</p>
+
+
+        </div>
+
+
+
+
+      </div>
+      <div>
+        <h4>Customer Support</h4>
+        <div class="alert alert-success">We’d love to hear from you! Send us a message or give us a call.</div>
+        <div class="d-flex align-items-center gap-2">
+          <img src="../../assets/images/brazil-.png" alt="" style="width: 30px;">
+          <p style="font-weight: bold;">Talamban, Cebu City</p>
+        </div>
+        <div class="d-flex align-items-center gap-2">
+          <img src="../../assets/images/communication.png" alt="" style="width: 30px;">
+          <p style="font-weight: bold;">(+63) 9319127640</p>
+        </div>
+        <div class="d-flex align-items-center gap-2">
+          <img src="../../assets/images/chat.png" alt="" style="width: 30px;">
+          <p style="font-weight: bold;">techbook@gmail.com</p>
+        </div>
+      </div>
+    </div>
+
+
+
+  </section>
+  <!-- Modal -->
+  <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+    aria-hidden="true">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <div class="collapseExample alert alert-warning" id="exampleModalLabel">Be sure you added your schedule
+            correctly before going to proceed!</div>
+          <!-- <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button> -->
+        </div>
+        <div class="modal-body text-center">
+          Are you going to proceed?
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-dismiss="modal"
+            (click)="desc.value = '';startD.value = ''; endD.value = '';startT.value = '';endT.value = ''">Close</button>
+          <button type="button" class="btn btn-primary"
+            (click)="add(desc.value,startD.value, endD.value,startT.value,endT.value)">Save changes</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <app-footer></app-footer>
+
+</body>
+
+
 

@@ -19,6 +19,12 @@ import { ReqCustomerComponent } from './req-customer/req-customer.component';
 import { TransactionsCustomerComponent } from './transactions-customer/transactions-customer.component';
 import { SettingsCustomerComponent } from './settings-customer/settings-customer.component';
 import { NotificationCustomerComponent } from './notification-customer/notification-customer.component';
+import { AutomotiveComponent } from './automotive/automotive.component';
+import { ComputerComponent } from './computer/computer.component';
+import { ElectricianComponent } from './electrician/electrician.component';
+import { ItComponent } from './it/it.component';
+import { MedicalComponent } from './medical/medical.component';
+import { WaterComponent } from './water/water.component';
 
 
 
@@ -89,6 +95,24 @@ const routes: Routes = [
   {
     path: 'notifications/2', component: NotificationCustomerComponent
 
+  },
+  {
+    path: 'electrician', component: ElectricianComponent
+  },
+  {
+    path: 'water', component: WaterComponent
+  },
+  {
+    path: 'it', component: ItComponent
+  },
+  {
+    path: 'automotive', component: AutomotiveComponent
+  },
+  {
+    path: 'computer', component: ComputerComponent
+  },
+  {
+    path: 'medical', component: MedicalComponent
   }
 ];
 

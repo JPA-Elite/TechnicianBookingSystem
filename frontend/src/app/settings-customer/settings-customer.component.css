@@ -42,3 +42,7 @@ body {
   background-color: #fff;
   border-bottom: 1px solid #e5e9f2;
 }
+
+.pass-alert{
+  display: none;
+}

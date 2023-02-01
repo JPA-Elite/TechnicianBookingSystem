@@ -90,7 +90,7 @@ export class ArticleService {
     console.log(tech.name);
     return  this.http.put(this.url+'/api/technician/' + id, tech ,http);
   }
-  updateCustomerAccount(id:any, customer:any): Observable<any>{
+  updateCustomerAccount( customer:any, id:any): Observable<any>{
     // const request = request.clone({
     //   headers : request.headers
     //     .set('Authorization', 'Bearer ' + token)
@@ -101,6 +101,19 @@ export class ArticleService {
       headers : new HttpHeaders({  'Accept' : 'application/json', 'Authorization': `Bearer ${localStorage.getItem('token')}` })
     };
     return  this.http.put('http://localhost:8000/api/customer/' + id, customer,http);
+  }
+
+  showCustomer(id:number): Observable<any>{
+    return this.http.get(this.url+ `/api/customer/` + id , this.httpOptions);
+  }
+  showCustomerSchedules(id:number): Observable<any>{
+    return this.http.get(this.url+ `/api/schedule/customer/` + id , this.httpOptions);
+  }
+  customerSchedules(scheds:any): Observable<any>{
+    return this.http.post(this.url+ `/api/schedule/customer` , scheds, this.httpOptions);
+  }
+  customerFeedbacks(feeds:string): Observable<any>{
+    return this.http.post(this.url+ `/api/feedback/customer` , feeds, this.httpOptions);
   }
 }
 

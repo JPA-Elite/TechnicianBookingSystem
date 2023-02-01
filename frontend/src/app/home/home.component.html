@@ -7,7 +7,7 @@
     </div>
 
     <form class="form-inline d-flex gap-1" (submit)="filteredCustomers()">
-      <input class="form-control mr-sm-3" style="width: 350px" type="search" placeholder="Search...."
+      <input class="form-control mr-sm-3" style="width: 350px" type="text" placeholder="Search...."
         aria-label="Search" #search>
       <button class="btn btn-outline-dark my-2 my-sm-0" type="submit" data-toggle="modal"
         data-target="#exampleModalLong">Search</button>
@@ -66,9 +66,7 @@
 
                         </div>
                         <div class="col-sm-3 text-align-center">
-                          <a class="btn btn-primary btn-info btn-sm" href="" style="margin-bottom: 5px;">Contact</a>
-                          &nbsp;
-                          <a class="btn btn-primary btn-info btn-sm" href="">Message</a>
+                          <a class="btn btn-primary btn-info btn-sm" routerLink="/request/1">Send Request</a>
                         </div>
                       </div>
                     </div>

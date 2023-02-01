@@ -6,6 +6,8 @@ use App\Http\Controllers\TechnicianAccountController;
 use App\Http\Controllers\TechnicianCertificateController;
 use App\Http\Controllers\TechnicianFeedbackController;
 use App\Http\Controllers\TechnicianScheduleController;
+use App\Http\Controllers\CustomerScheduleController;
+use App\Http\Controllers\CustomerFeedbackController;
 use App\Http\Controllers\TechnicianNotificationController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
@@ -38,7 +40,7 @@ Route::middleware('auth:sanctum')->group(function () {
 
     Route::put("technician-password/{id}", [TechnicianAccountController::class, 'update']);
     Route::patch("technician-password/{id}", [TechnicianAccountController::class, 'update']);
-    
+
     Route::delete("technician/{id}", [TechnicianAccountController::class, 'destroy']);
 
     Route::get("customer", [CustomerAccountController::class, 'index']);
@@ -46,6 +48,9 @@ Route::middleware('auth:sanctum')->group(function () {
     Route::put("customer/{id}", [CustomerAccountController::class, 'update']);
     Route::patch("customer/{id}", [CustomerAccountController::class, 'update']);
     Route::delete("customer/{id}", [CustomerAccountController::class, 'destroy']);
+    Route::post("feedback/customer", [CustomerFeedbackController::class, 'store']);
+    Route::post("schedule/customer", [CustomerScheduleController::class, 'store']);
+    Route::get("schedule/customer/{id}", [CustomerScheduleController::class, 'show']);
 
     Route::get("schedule/{id}", [TechnicianScheduleController::class, 'show']);
     Route::post("schedule", [TechnicianScheduleController::class, 'store']);

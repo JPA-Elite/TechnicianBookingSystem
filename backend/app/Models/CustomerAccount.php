@@ -6,6 +6,7 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Notifications\Notifiable;
 use Laravel\Sanctum\HasApiTokens;
 use Illuminate\Database\Eloquent\Model;
+use App\Models\CustomerSchedule;
 
 class CustomerAccount extends Model
 {
@@ -42,8 +43,8 @@ class CustomerAccount extends Model
     //     return $this->belongsTo(Place::class);
     // }
 
-    public function books(){
-        return $this->hasMany(Book::class);
+    public function schedule(){
+        return $this->hasMany(CustomerSchedule::class);
     }
 
 
