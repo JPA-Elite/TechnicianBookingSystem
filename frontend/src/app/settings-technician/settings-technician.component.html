@@ -27,9 +27,9 @@
       </div>
       <div class="col-md-7 col-xl-8">
         <div class="tab-content">
-          <div class="tab-pane fade show active" id="account" role="tabpanel" #account style="height: 550px;overflow: auto;">
+          <div class="tab-pane fade show active " id="account" role="tabpanel" #account style="height: 550px;overflow: auto;">
 
-            <div class="card">
+            <div class="card" style="padding: 30px;">
               <div class="card-header">
 
                 <h5 class="card-title mb-0" style="font-weight: bold;">Account info</h5>
@@ -41,20 +41,20 @@
               </div>
 
               <br>
-              <!-- [formGroup]="form" (ngSubmit)="onCreateService(form)" -->
+
               <form   (ngSubmit)="onSubmit(name.value, email.value, address.value,gender.value,age.value,birthdate.value,phone.value
-              ,validID.value, category.value)">
+              ,validID.value, category.value,1)">
                 <div >
                   <div class="form-row">
                     <div class="form-group col-md-6">
                       <label for="inputFirstName" style="font-weight: bold;">Name</label>
-                      <input type="text" class="form-control" id="inputFirstName" value="{{ user.name }}" #name>
+                      <input (click)="  dismissAlert() " type="text" class="form-control" id="inputFirstName" value="{{ user.name }}" #name>
                     </div>
                     <br>
                     <div class="form-group col-md-4 d-flex align-items-center gap-3">
                       <label for="inputLastName" style="font-weight: bold;">Gender</label>
 
-                      <select id="inputState" class="form-control" #gender>
+                      <select (click)="  dismissAlert() " id="inputState" class="form-control" #gender >
                         <option value="">Change</option>
                         <option value="male">Male</option>
                         <option value="female">Female</option>
@@ -66,35 +66,35 @@
                   <br>
                   <div class="form-group col-md-6">
                     <label for="inputEmail4" style="font-weight: bold;">Birth Date</label>
-                    <input type="text" class="form-control" id="inputBirthdate" value="{{ user.birthdate }}" #birthdate>
+                    <input (click)="  dismissAlert() " type="text" class="form-control" id="inputBirthdate" value="{{ user.birthdate }}" #birthdate>
                   </div>
                   <br>
                   <div class="form-group col-md-2">
                     <label for="inputAddress" style="font-weight: bold;">Age</label>
-                    <input type="text" class="form-control" id="inputAge" value="{{ user.age }}" #age>
+                    <input (click)="  dismissAlert() " type="text" class="form-control" id="inputAge" value="{{ user.age }}" #age>
                   </div>
                   <br>
                   <div class="form-group col-md-6">
                     <label for="inputAddress2" style="font-weight: bold;">Address</label>
-                    <input type="text" class="form-control" id="inputAddress" value="{{ user.address }}" #address>
+                    <input (click)="  dismissAlert() " type="text" class="form-control" id="inputAddress" value="{{ user.address }}" #address>
                   </div>
                   <br>
                   <div class="form-row">
                     <div class="form-group col-md-6">
                       <label for="inputCity" style="font-weight: bold;">Phone</label>
-                      <input type="text" class="form-control" id="inputPhone" value="{{ user.phone }}" #phone>
+                      <input (click)="  dismissAlert() " type="text" class="form-control" id="inputPhone" value="{{ user.phone }}" #phone>
                     </div>
                     <br>
                     <div class="form-group col-md-6">
                       <label for="inputState" style="font-weight: bold;">Email</label>
-                      <input type="text" class="form-control" id="inputEmail" value="{{ user.email }}" #email>
+                      <input (click)="  dismissAlert() " type="text" class="form-control" id="inputEmail" value="{{ user.email }}" #email>
 
                     </div>
                     <br>
                     <div class="form-group col-md-6">
                       <label for="inputState" style="font-weight: bold;">Valid ID</label>
                       <div class="">
-                        <input type="file" class="form-control" id="inputValidID" value="{{ user.valid_id }} " #validID>
+                        <input (click)="  dismissAlert() " type="file" class="form-control" id="inputValidID" value="{{ user.valid_id }} " #validID>
                         <small style="position: relative;top: 8px;font-size: 12px;font-weight: bold;"
                           id="validIDText">{{
                           user.valid_id }}</small>
@@ -108,7 +108,7 @@
                     <div class="form-group col-md-6">
                       <label for="inputState" style="font-weight: bold;">Change Profile</label>
                       <div class="">
-                        <input type="file" class="form-control" id="inputValidID" (change)="changeImage($event)">
+                        <input (click)="  dismissAlert() " type="file" class="form-control" id="inputValidID" (change)="changeImage($event)">
                         <small style="position: relative;top: 8px;font-size: 12px;font-weight: bold;"
                           id="validIDText">{{
                           user.image }}</small>
@@ -123,13 +123,14 @@
                       <label for="inputZip" style="font-weight: bold;">Category</label>
                       <div class="form-group col-md-6 d-flex align-items-center gap-3">
 
-                        <select id="inputState" class="form-control" (ngModelChange)="user.gender"
+                        <select (click)="  dismissAlert() " id="inputState" class="form-control" (ngModelChange)="user.gender"
                           [value]="user.category" #category>
                           <option value="">Change Category...</option>
-                          <option value="electrician">Electrical Service Technician</option>
-                          <option value="computer-technician">Computer Technician</option>
-                          <option value="it-technician">IT Technician</option>
-                          <option value="automotive">Automotive Technician</option>
+                          <option value="Electrical Service Technician">Electrical Service Technician</option>
+                          <option value="Water Technician">Water Technician</option>
+                          <option value="IT Technician">IT Technician</option>
+                          <option value="Automotive Technician">Automotive Technician</option>
+                          <option value=" Medical equipment technician"> Medical equipment technician</option>
                         </select>
                         <input type="text" class="form-control" id="input" value="{{ user.category }}" disabled>
                       </div>
@@ -149,29 +150,34 @@
                 <div class="alert alert-warning" role="alert">
                   <p class="mb-0">You can manage and update your password access key below. </p>
                 </div>
-                <form>
+                <form  (ngSubmit)="onSubmit(name.value, email.value, address.value,gender.value,age.value,birthdate.value,phone.value
+                ,validID.value, category.value,2)">
                   <div class="form-group col-md-6 ">
                     <label for="inputPasswordCurrent">Current password</label>
-                    <input type="password" class="form-control" id="inputPasswordCurrent" value="{{ passkey }}"
+                    <input (click)="  dismissAlert() " type="password" class="form-control" id="inputPasswordCurrent" value="{{ passkey }}"
                       disabled>
 
                   </div>
                   <br>
                   <div class="form-group col-md-6 ">
                     <label for="inputPasswordCon">Confirm password</label>
-                    <input type="password" class="form-control" id="inputPasswordCon">
+                    <input (click)="  dismissAlert() " type="password" class="form-control" id="inputPasswordCon" #cpass>
                   </div>
                   <br>
                   <div class="form-group  col-md-6 ">
                     <label for="inputPasswordNew">New password</label>
-                    <input type="password" class="form-control" id="inputPasswordNew">
+                    <input (click)="  dismissAlert() " type="password" class="form-control" id="inputPasswordNew" #npass>
                   </div>
                   <br>
                   <div class="form-group  col-md-6 ">
                     <label for="inputPasswordNew2">Verify password</label>
-                    <input type="password" class="form-control" id="inputPasswordNew2">
+                    <input (click)="dismissAlert()" type="password" class="form-control " id="inputPasswordNew2" #vpass>
                   </div>
                   <br>
+                  <div class="alert alert-warning pass-alert" #c_alert>Confirm password does not match!</div>
+                  <div class="alert alert-warning pass-alert" #v_alert>New password and verified password does not match!</div>
+                  <div class="alert alert-warning pass-alert" #no_npass_alert>New password must be inputted!</div>
+                  <div class="alert alert-warning pass-alert" #s_alert>Information successfully updated!</div>
                   <button type="submit" class="btn btn-primary">Save changes</button>
                 </form>
               </div>
@@ -193,7 +199,7 @@
                   <p>Once you delete your account, there is no turning back. You have possible accept the consequences.
                   </p>
                   <p class="lead">
-                    <a class="btn btn-danger btn text-light" role="button" >Remove Account</a>
+                    <a class="btn btn-danger btn text-light" role="button" (click)="removeAccount()">Remove Account</a>
                   </p>
                 </div>
 

@@ -21,6 +21,15 @@ export class SettingsTechnicianComponent implements OnInit {
   @ViewChild('account') acc!: ElementRef;
   @ViewChild('password') pass!: ElementRef;
   @ViewChild('removeaccount') d_acc!: ElementRef;
+  @ViewChild('cpass') cpass!: ElementRef;
+  @ViewChild('npass') npass!: ElementRef;
+  @ViewChild('vpass') vpass!: ElementRef;
+  @ViewChild('c_alert') c_alert!: ElementRef;
+  @ViewChild('v_alert') v_alert!: ElementRef;
+  @ViewChild('s_alert') s_alert!: ElementRef;
+  @ViewChild('no_npass_alert') no_npass_alert!: ElementRef;
+
+
   constructor(private route: ActivatedRoute, private router: Router, private articleService: ArticleService, private http: HttpClient, @Inject(DOCUMENT) document: Document, private fb: FormBuilder) { }
   ngOnInit(): void {
     this.createForm();
@@ -32,7 +41,6 @@ export class SettingsTechnicianComponent implements OnInit {
       result => this.user = result
     );
     this.passkey = localStorage.getItem('pass');
-
 
   }
 
@@ -46,12 +54,16 @@ export class SettingsTechnicianComponent implements OnInit {
   //   console.log(formData);
   // }
 
+  dismissAlert(): void {
+    this.c_alert.nativeElement.style.display = 'none';
+    this.v_alert.nativeElement.style.display = 'none';
+    this.s_alert.nativeElement.style.display = 'none';
+    this.no_npass_alert.nativeElement.style.display = "none";
+  }
   changeImage(event: any) {
-    // this.files = (event.target as HTMLInputElement)?.files?.[0];
+
     this.files = <File>event.target.files[0];
-    // this.form.patchValue({
-    //   image:this.files
-    // });
+
     console.log(this.files);
   }
 
@@ -65,15 +77,9 @@ export class SettingsTechnicianComponent implements OnInit {
   }
   onSubmit(name: string, email: string, address: string, gender: string, age: string,
     birthdate: string, phone: string
-    , validID: string, category: string) {
+    , validID: string, category: string, index: number): void {
     this.submitted = true;
     const formData = new FormData();
-    // if (this.form.invalid) {
-    //   console.log("not send");
-    // }
-
-
-
 
     console.log(name);
     formData.append("name", name);
@@ -101,7 +107,12 @@ export class SettingsTechnicianComponent implements OnInit {
       formData.append("category", this.user.category);
     }
 
-    formData.append("password", this.passkey);
+    //password
+
+
+
+    //files
+
     if (this.files != null) {
       formData.append("image", this.files, this.files.name);
     }
@@ -109,76 +120,149 @@ export class SettingsTechnicianComponent implements OnInit {
     formData.append("email_verified_at", this.user.email_verified_at);
     formData.append("created_at", this.user.created_at);
     formData.append("updated_at", this.user.updated_at);
-    // "email_verified_at": "2023-01-30T08:46:12.000000Z",
-    // "created_at": "2023-01-30T08:46:20.000000Z",
-    // "updated_at": "2023-01-30T08:46:20.000000Z"
 
-
-
-
-
-    // this.cers_data = {
-    //   'technician_account_id': formData.get('technician_account_id'),
-    //   'image': formData.get('image')
-    // };
     console.log(formData.get('name'));
-    // const headers = new HttpHeaders({
-    //   'Accept': 'application/json',
-    //   'Authorization': `Bearer ${localStorage.getItem('token')}`
-    // });
-    // console.log(this.formData);
-
-    if (this.files != null) {
-      console.log('have file');
-
-      this.data_update = {
-        'name': formData.get('name'),
-        'gender': formData.get('gender'),
-        'birthdate': formData.get('birthdate'),
-        'age': formData.get('age'),
-        'address': formData.get('address'),
-        'phone': formData.get('phone'),
-        'email': formData.get('email'),
-        'valid_id': formData.get('valid_id'),
-        'category': formData.get('category'),
-        'password': formData.get('password'),
-        'type': 'technician',
-        'image': formData.get('image'),
-        'email_verified_at': formData.get('email_verified_at'),
-        "created_at": formData.get('created_at'),
-        "updated_at": formData.get('update_at')
-      };
-    } else {
-      this.data_update = {
-        'name': formData.get('name'),
-        'gender': formData.get('gender'),
-        'birthdate': formData.get('birthdate'),
-        'age': formData.get('age'),
-        'address': formData.get('address'),
-        'phone': formData.get('phone'),
-        'email': formData.get('email'),
-        'valid_id': formData.get('valid_id'),
-        'category': formData.get('category'),
-        'password': formData.get('password'),
-        'type': 'technician',
-        'image': '',
-        'email_verified_at': formData.get('email_verified_at'),
-        "created_at": formData.get('created_at'),
-        "updated_at": formData.get('update_at')
-      };
-    }
-
 
     const http = {
       headers: new HttpHeaders({ 'Authorization': `Bearer ${localStorage.getItem('token')}` })
     };
-    // return this.http.put('http://localhost:8000/api/technician/1',formData, http).subscribe(((data :any) => {
-    //   console.log(data);
-    // }));
-    return this.articleService.updateTechnicianAccount(formData, this.user.id).subscribe(((data: any) => {
-      console.log(data);
-    }));
+
+    if (index == 1) {
+      formData.append("password", this.passkey);
+
+      if (this.files != null) {
+        console.log('have file');
+
+
+        this.data_update = {
+          'name': formData.get('name'),
+          'gender': formData.get('gender'),
+          'birthdate': formData.get('birthdate'),
+          'age': formData.get('age'),
+          'address': formData.get('address'),
+          'phone': formData.get('phone'),
+          'email': formData.get('email'),
+          'valid_id': formData.get('valid_id'),
+          'category': formData.get('category'),
+          'password': formData.get('password'),
+          'type': 'technician',
+          'image': formData.get('image'),
+          'email_verified_at': formData.get('email_verified_at'),
+          "created_at": formData.get('created_at'),
+          "updated_at": formData.get('update_at')
+        };
+      } else {
+        this.data_update = {
+          'name': formData.get('name'),
+          'gender': formData.get('gender'),
+          'birthdate': formData.get('birthdate'),
+          'age': formData.get('age'),
+          'address': formData.get('address'),
+          'phone': formData.get('phone'),
+          'email': formData.get('email'),
+          'valid_id': formData.get('valid_id'),
+          'category': formData.get('category'),
+          'password': formData.get('password'),
+          'type': 'technician',
+          'image': '',
+          'email_verified_at': formData.get('email_verified_at'),
+          "created_at": formData.get('created_at'),
+          "updated_at": formData.get('update_at')
+        };
+      }
+      this.s_alert.nativeElement.style.display = 'block';
+      this.articleService.updateTechnicianAccount(this.data_update, this.user.id).subscribe(((data: any) => {
+        console.log(data);
+      }));
+    }
+    if (index == 2) {
+
+      const confirm = this.cpass.nativeElement.value;
+      const new_pass = this.npass.nativeElement.value;
+      const verify = this.vpass.nativeElement.value;
+
+      if (confirm == '' && new_pass == '' && verify == '') {
+        this.no_npass_alert.nativeElement.style.display = "block";
+      }
+      else if (new_pass == '' && verify == '') {
+        this.no_npass_alert.nativeElement.style.display = "block";
+      }
+      else if (confirm != this.passkey && confirm != '') {
+        this.c_alert.nativeElement.style.display = "block";
+      } else if (new_pass != verify && new_pass != '' && verify != '') {
+        this.v_alert.nativeElement.style.display = "block";
+      } else if (new_pass != verify) {
+        this.v_alert.nativeElement.style.display = "block";
+      }
+      else if (confirm != this.passkey) {
+        this.c_alert.nativeElement.style.display = "block";
+      }
+      else {
+        formData.append("password", new_pass);
+        if (this.files != null) {
+          console.log('have file');
+
+
+          this.data_update = {
+            'name': formData.get('name'),
+            'gender': formData.get('gender'),
+            'birthdate': formData.get('birthdate'),
+            'age': formData.get('age'),
+            'address': formData.get('address'),
+            'phone': formData.get('phone'),
+            'email': formData.get('email'),
+            'valid_id': formData.get('valid_id'),
+            'category': formData.get('category'),
+            'password': formData.get('password'),
+            'type': 'technician',
+            'image': formData.get('image'),
+            'email_verified_at': formData.get('email_verified_at'),
+            "created_at": formData.get('created_at'),
+            "updated_at": formData.get('update_at')
+          };
+        } else {
+          this.data_update = {
+            'name': formData.get('name'),
+            'gender': formData.get('gender'),
+            'birthdate': formData.get('birthdate'),
+            'age': formData.get('age'),
+            'address': formData.get('address'),
+            'phone': formData.get('phone'),
+            'email': formData.get('email'),
+            'valid_id': formData.get('valid_id'),
+            'category': formData.get('category'),
+            'password': formData.get('password'),
+            'type': 'technician',
+            'image': '',
+            'email_verified_at': formData.get('email_verified_at'),
+            "created_at": formData.get('created_at'),
+            "updated_at": formData.get('update_at')
+          };
+        }
+        this.s_alert.nativeElement.style.display = 'block';
+        localStorage.removeItem('pass');
+        localStorage.setItem('pass', new_pass);
+
+      }
+
+    }
+
+
   }
+  removeAccount(): void {
+    const http = {
+      headers: new HttpHeaders({ 'Authorization': `Bearer ${localStorage.getItem('token')}` })
+    };
+    this.http.delete("http://localhost:8000/api/technician/" + this.user.id, http).subscribe((data)=>{
+      console.log(data);
+      localStorage.removeItem('token');
+      localStorage.removeItem('pass');
+      this.router.navigate(['/']);
+
+    });
+
+  }
+
   changePage(index: number) {
     if (index == 1) {
       this.acc.nativeElement.style.display = 'block';
