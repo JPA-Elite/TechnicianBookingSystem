@@ -58,10 +58,10 @@
                     <!-- <div style="display:flex;align-items:center;gap:10px;width:100%">
                     <img style="width:100px;height:100px" src="{{URL::asset('/tech_profile_images/Dnqd9b7KbyW9Tg3dC3S3Hd6FGLJ0c65I.jpg')}}" class="img-fluid" />
                   <div> -->
-                  <p style="font-weight:400"><strong>Name: </strong> Joshua Algadipe</p>
-                    <p style="font-weight:400"><strong>Location: </strong> Vallehermoso, Negros Oriental</p>
-                    <p style="font-weight:400"><strong>Phone: </strong> 09567845634</p>
-                    <p style="font-weight:400"><strong>Email: </strong> joshua@gmail.com</p>
+                  <p style="font-weight:400"><strong>Name: </strong>{{ $data['name'] }}</p>
+                    <p style="font-weight:400"><strong>Location: </strong> {{ $data['location'] }}</p>
+                    <p style="font-weight:400"><strong>Phone: </strong> {{ $data['phone'] }}</p>
+                    <p style="font-weight:400"><strong>Email: </strong> {{ $data['email'] }}</p>
                   </div>
 
                     </div>
@@ -74,13 +74,13 @@
 				<div  style="border-radius:10px;border:1px solid gray;padding:20px">
 				  <div class="card-details  " >
                   <p style="font-weight:bold">Subject: </p>
-                    <p style="font-weight:400">&nbsp;&nbsp;&nbsp;&nbsp;This is message!</p>
+                    <p style="font-weight:400">&nbsp;&nbsp;&nbsp;&nbsp;{{  $data['subject']  }}</p>
 
 
 				  </div>
                   <div class="card-details" style="border-radius:10px">
                   <p style="font-weight:bold">Message: </p>
-                    <p style="font-weight:400">&nbsp;&nbsp;&nbsp;&nbsp;This is message!</p>
+                    <p style="font-weight:400">&nbsp;&nbsp;&nbsp;&nbsp;{{  $data['message'] }}</p>
 
 
 				  </div>

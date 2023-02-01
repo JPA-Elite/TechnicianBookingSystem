@@ -17,7 +17,11 @@ class BookingRequestFactory extends Factory
     public function definition()
     {
         return [
-            //
+            'subject' => $this->faker->paragraph(1),
+            'message' => $this->faker->paragraph(1),
+            'date' => $this->faker->dateTimeThisCentury->format('Y-m-d'),
+            'customer_account_id' => 1,
+            'technician_account_id' => 1,
         ];
     }
 }

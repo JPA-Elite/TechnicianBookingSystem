@@ -36,13 +36,11 @@ class TechnicianNotificationController extends Controller
      */
     public function store(Request $request)
     {
-        $validated = $request->validate([
-            'message' => 'required'
-        ]);
+        $tech_id = TechnicianAccount::where('email',  $request->email)->first()->id;
 
         return TechnicianNotification::create([
-            'technician_account_id' => $request->technician_account_id,
-            'message' => $validated['message'],
+            'technician_account_id' =>   $tech_id ,
+            'message' => $request->message,
 
         ]);
     }

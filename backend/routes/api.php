@@ -9,6 +9,7 @@ use App\Http\Controllers\TechnicianScheduleController;
 use App\Http\Controllers\CustomerScheduleController;
 use App\Http\Controllers\CustomerFeedbackController;
 use App\Http\Controllers\TechnicianNotificationController;
+use App\Http\Controllers\MailBookingRequestController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
@@ -69,6 +70,9 @@ Route::middleware('auth:sanctum')->group(function () {
 
 
     Route::apiResource('technician-notification',TechnicianNotificationController::class);
+
+    Route::post('send-email-request',[MailBookingRequestController::class, 'requestBook']);
+
 
 
 

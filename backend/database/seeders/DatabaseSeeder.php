@@ -32,6 +32,7 @@ class DatabaseSeeder extends Seeder
         TechnicianSchedule::factory(10)->create();
         TechnicianFeedback::factory(10)->create();
         TechnicianNotification::factory(10)->create();
+        TechnicianNotification::factory(10)->create();
 
 
 
