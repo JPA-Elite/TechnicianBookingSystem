@@ -15,9 +15,9 @@ return new class extends Migration
     {
         Schema::create('transactions', function (Blueprint $table) {
             $table->id();
-            $table->string('booking_account_id');
-            $table->string('technician_account_id');
-            $table->string('customer_account_id');
+            $table->unsignedBigInteger('booking_request_id');
+            $table->unsignedBigInteger('technician_account_id');
+            $table->unsignedBigInteger('customer_account_id');
             $table->timestamps();
         });
     }

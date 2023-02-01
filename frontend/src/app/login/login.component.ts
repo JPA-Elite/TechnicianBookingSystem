@@ -51,8 +51,9 @@ export class LoginComponent implements OnInit {
     this.articleService.login1(this.credentials as any).subscribe(
       (result: any) => {
         if (result.token != null) {
-          localStorage.setItem('token', result.token);
-          console.log(localStorage.getItem('token'));
+          localStorage.setItem('token2', result.token);
+          localStorage.setItem('pass2', this.pass);
+          console.log(localStorage.getItem('token2'));
           this.router.navigate(['/home/2']);
         } else {
           this.articleService.login2(this.credentials as any).subscribe(

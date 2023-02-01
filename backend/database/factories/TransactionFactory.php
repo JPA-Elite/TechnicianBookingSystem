@@ -17,7 +17,7 @@ class TransactionFactory extends Factory
     public function definition()
     {
         return [
-            'booking_account_id'=> $this->faker->randomDigit,
+            'booking_request_id'=> $this->faker->randomDigit,
             'technician_account_id'=> $this->faker->randomDigit,
             'customer_account_id'=> $this->faker->randomDigit
         ];

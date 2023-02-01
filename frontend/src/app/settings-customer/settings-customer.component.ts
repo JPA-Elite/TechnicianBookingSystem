@@ -33,13 +33,13 @@ export class SettingsCustomerComponent implements OnInit {
   ngOnInit(): void {
     this.createForm();
     const headers = new HttpHeaders({
-      'Authorization': `Bearer ${localStorage.getItem('token')}`
+      'Authorization': `Bearer ${localStorage.getItem('token2')}`
     });
 
     this.http.get('http://localhost:8000/api/user', { headers: headers }).subscribe(
       result => this.user = result
     );
-    this.passkey = localStorage.getItem('pass');
+    this.passkey = localStorage.getItem('pass2');
 
   }
 
@@ -112,7 +112,7 @@ export class SettingsCustomerComponent implements OnInit {
     console.log(formData.get('name'));
 
     const http = {
-      headers: new HttpHeaders({ 'Authorization': `Bearer ${localStorage.getItem('token')}` })
+      headers: new HttpHeaders({ 'Authorization': `Bearer ${localStorage.getItem('token2')}` })
     };
 
     if (index == 1) {
@@ -220,8 +220,8 @@ export class SettingsCustomerComponent implements OnInit {
           };
         }
         this.s_alert.nativeElement.style.display = 'block';
-        localStorage.removeItem('pass');
-        localStorage.setItem('pass', new_pass);
+        localStorage.removeItem('pass2');
+        localStorage.setItem('pass2', new_pass);
 
       }
 
@@ -231,12 +231,12 @@ export class SettingsCustomerComponent implements OnInit {
   }
   removeAccount(): void {
     const http = {
-      headers: new HttpHeaders({ 'Authorization': `Bearer ${localStorage.getItem('token')}` })
+      headers: new HttpHeaders({ 'Authorization': `Bearer ${localStorage.getItem('token2')}` })
     };
     this.http.delete("http://localhost:8000/api/customer/" + this.user.id, http).subscribe((data)=>{
       console.log(data);
-      localStorage.removeItem('token');
-      localStorage.removeItem('pass');
+      localStorage.removeItem('token2');
+      localStorage.removeItem('pass2');
       this.router.navigate(['/']);
 
     });

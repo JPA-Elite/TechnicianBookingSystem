@@ -38,7 +38,7 @@ export class CustomerComponent implements OnInit {
     this.showTechnicians();
 
     const headers = new HttpHeaders({
-      'Authorization': `Bearer ${localStorage.getItem('token')}`
+      'Authorization': `Bearer ${localStorage.getItem('token2')}`
     });
 
     this.http.get('http://localhost:8000/api/user', { headers: headers }).subscribe(
@@ -56,7 +56,7 @@ export class CustomerComponent implements OnInit {
 
 
 
-    this.loggedIn = localStorage.getItem('token') !== null;
+    this.loggedIn = localStorage.getItem('token2') !== null;
 
 
 
@@ -141,12 +141,12 @@ export class CustomerComponent implements OnInit {
 
   logOut() {
     const headers = new HttpHeaders({
-      'Authorization': `Bearer ${localStorage.getItem('token')}`
+      'Authorization': `Bearer ${localStorage.getItem('token2')}`
     });
 
     this.http.post('http://localhost:8000/api/customer/logout', { headers: headers });
-    localStorage.removeItem('token');
-    localStorage.removeItem('pass');
+    localStorage.removeItem('token2');
+    localStorage.removeItem('pass2');
     this.router.navigate(['/']);
 
 

@@ -7,6 +7,7 @@ use Laravel\Sanctum\HasApiTokens;
 use Illuminate\Notifications\Notifiable;
 use App\Models\Place;
 use App\Models\TechnicianSchedule;
+use App\Models\Transaction;
 use App\Models\TechnicianCertificate;
 use App\Models\TechnicianNotification;
 use Illuminate\Database\Eloquent\Model;
@@ -56,6 +57,9 @@ class TechnicianAccount extends Model
         return $this->hasMany(TechnicianNotification::class)->orderBy('created_at', 'desc');
     }
 
+    public function transaction(){
+        return $this->hasMany(Transaction::class);
+    }
     /**
      * Get the user associated with the OwnerAccount
      *

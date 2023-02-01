@@ -31,7 +31,7 @@
       <li routerLink="/request/2">Request</li>
       <li routerLink="/transactions/2">Transactions</li>
       <li routerLink="/settings/2">Settings</li>
-      <i class="fa-solid fa-bell" routerLink="/notifications/2"></i>
+      <img style="width: 25px;" src="../../assets/images/bell.png" routerLink="/notifications/2">
     </ul>
     <button class="btn" routerLink="/login" *ngIf="loggedIn" (click)="logOut()">LOGOUT</button>
   </div>
@@ -81,7 +81,7 @@
 
                       </div>
                       <div class="col-sm-3 text-align-center">
-                        <a class="btn btn-primary btn-info btn-sm" style="color: white;" (click)="showRequest( tech.email )">Send Request</a>
+                        <a class="btn btn-primary btn-info btn-sm" style="color: white;" (click)="showRequest(tech.id ,tech.email )">Send Request</a>
                       </div>
                     </div>
                   </div>

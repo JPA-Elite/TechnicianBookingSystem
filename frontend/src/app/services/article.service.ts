@@ -11,6 +11,10 @@ export class ArticleService {
     headers : new HttpHeaders({ 'Content-Type': 'application/json', 'Accept' : 'application/json' ,   'Authorization': `Bearer ${localStorage.getItem('token')}`})
   };
 
+  httpOptions2 = {
+    headers : new HttpHeaders({ 'Content-Type': 'application/json', 'Accept' : 'application/json' ,   'Authorization': `Bearer ${localStorage.getItem('token2')}`})
+  };
+
 
   url:string = 'http://localhost:8000';
   constructor(private http : HttpClient) {}
@@ -19,29 +23,29 @@ export class ArticleService {
     return this.http.get<any>(this.url+ `/api/customer`, this.httpOptions);
   }
   listTechnicians(){
-    return this.http.get<any>(this.url+ `/api/technician`, this.httpOptions);
+    return this.http.get<any>(this.url+ `/api/technician`, this.httpOptions2);
   }
 
 
   addCustomers(customer:any): Observable<any>{
-    return this.http.post<any>(this.url+ `/api/customer`,customer, this.httpOptions);
+    return this.http.post<any>(this.url+ `/api/customer`,customer, this.httpOptions2);
 
   }
 
   find(id:number): Observable<any>{
     const headers = new HttpHeaders({
-      'Authorization': `Bearer ${localStorage.getItem('token')}`
+      'Authorization': `Bearer ${localStorage.getItem('token2')}`
     });
 
     return this.http.get<any>(this.url+ `/api/customer/`+id,  { headers: headers });
   }
 
   update(id : number, customer:any): Observable<any>{
-    return this.http.put<any>(this.url+ `/api/customer/`+ id, customer, this.httpOptions);
+    return this.http.put<any>(this.url+ `/api/customer/`+ id, customer, this.httpOptions2);
   }
 
   deleteCustomer(id : any): Observable<any>{
-    return this.http.delete<any>(this.url+ `/api/customer/`+ id, this.httpOptions);
+    return this.http.delete<any>(this.url+ `/api/customer/`+ id, this.httpOptions2);
   }
 
   login1(credentials:any): Observable<any>{
@@ -64,12 +68,16 @@ export class ArticleService {
   showNotificationTech(id:number): Observable<any>{
     return this.http.get(this.url+ `/api/technician-notification/` + id , this.httpOptions);
   }
+  showNotificationCus(id:number): Observable<any>{
+    return this.http.get(this.url+ `/api/customer-notification/` + id , this.httpOptions2);
+  }
   addSchedules(scheds:any): Observable<any>{
     return this.http.post(this.url+ `/api/schedule` , scheds, this.httpOptions);
   }
   addFeedbacks(feed:string): Observable<any>{
     return this.http.post(this.url+ `/api/feedback` , feed, this.httpOptions);
   }
+
   addCertificate(cer:any): Observable<any>{
     const cerHTTP = {
       headers : new HttpHeaders({ 'Authorization': `Bearer ${localStorage.getItem('token')}`})
@@ -98,22 +106,26 @@ export class ArticleService {
     //     .set('Content-Type', 'multipart/form-data;boundary=§§§')
     // });
     const http = {
-      headers : new HttpHeaders({  'Accept' : 'application/json', 'Authorization': `Bearer ${localStorage.getItem('token')}` })
+      headers : new HttpHeaders({  'Accept' : 'application/json', 'Authorization': `Bearer ${localStorage.getItem('token2')}` })
     };
     return  this.http.put('http://localhost:8000/api/customer/' + id, customer,http);
   }
 
   showCustomer(id:number): Observable<any>{
-    return this.http.get(this.url+ `/api/customer/` + id , this.httpOptions);
+    return this.http.get(this.url+ `/api/customer/` + id , this.httpOptions2);
+  }
+
+  showTechnician(id:number): Observable<any>{
+    return this.http.get(this.url+ `/api/technician/` + id , this.httpOptions);
   }
   showCustomerSchedules(id:number): Observable<any>{
-    return this.http.get(this.url+ `/api/schedule/customer/` + id , this.httpOptions);
+    return this.http.get(this.url+ `/api/schedule/customer/` + id , this.httpOptions2);
   }
   customerSchedules(scheds:any): Observable<any>{
-    return this.http.post(this.url+ `/api/schedule/customer` , scheds, this.httpOptions);
+    return this.http.post(this.url+ `/api/schedule/customer` , scheds, this.httpOptions2);
   }
   customerFeedbacks(feeds:string): Observable<any>{
-    return this.http.post(this.url+ `/api/feedback/customer` , feeds, this.httpOptions);
+    return this.http.post(this.url+ `/api/feedback/customer` , feeds, this.httpOptions2);
   }
 }
 

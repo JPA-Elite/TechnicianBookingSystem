@@ -8,6 +8,8 @@ use Laravel\Sanctum\HasApiTokens;
 use Illuminate\Database\Eloquent\Model;
 use App\Models\CustomerSchedule;
 use App\Models\CustomerNotification;
+use App\Models\Transaction;
+
 
 class CustomerAccount extends Model
 {
@@ -50,6 +52,9 @@ class CustomerAccount extends Model
 
     public function notifications(){
         return $this->hasMany(CustomerNotification::class);
+    }
+    public function transaction(){
+        return $this->belongsToMany(Transaction::class);
     }
 
 

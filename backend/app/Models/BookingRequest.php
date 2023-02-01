@@ -4,6 +4,7 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use App\Models\Transaction;
 
 class BookingRequest extends Model
 {
@@ -15,4 +16,9 @@ class BookingRequest extends Model
         'technician_account_id'
     ];
     use HasFactory;
+
+    public function transaction(){
+        return $this->hasMany(Transaction::class);
+    }
+
 }

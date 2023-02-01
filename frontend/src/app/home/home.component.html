@@ -19,7 +19,7 @@
         <li routerLink="/request/1">Request</li>
         <li routerLink="/transactions/1">Transactions</li>
         <li routerLink="/settings/1">Settings</li>
-        <i class="fa-solid fa-bell" routerLink="/notifications/1"></i>
+        <img style="width: 25px;" src="../../assets/images/bell.png" routerLink="/notifications/1">
       </ul>
       <button class="btn" routerLink="/login" *ngIf="loggedIn" (click)="logOut()">LOGOUT</button>
     </div>
@@ -49,7 +49,7 @@
                 <section class="search-result-item" *ngFor="let cus of filteredcustomers;let i = index">
                   <div style="display: none;"></div>
                   <div id="{{ i }}" >
-                    <a class="image-link rounded-circle" href="#"><img class="image"
+                    <a class="image-link rounded-circle" href="#"><img  class="image"
                         src="{{ imageCustomerDirectory }}{{ cus.image }}">
                     </a>
                     <div class="search-result-item-body">

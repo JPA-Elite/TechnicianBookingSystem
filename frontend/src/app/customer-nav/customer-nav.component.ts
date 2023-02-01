@@ -22,7 +22,7 @@ export class CustomerNavComponent {
 
   }
   ngOnInit() {
-    this.loggedIn = localStorage.getItem('token') !== null;
+    this.loggedIn = localStorage.getItem('token2') !== null;
     this.showTechnicians();
 
   }
@@ -41,14 +41,14 @@ export class CustomerNavComponent {
   }
 
   logOut() {
-    localStorage.removeItem('token');
+    localStorage.removeItem('token2');
     const headers = new HttpHeaders({
-      'Authorization': `Bearer ${localStorage.getItem('token')}`
+      'Authorization': `Bearer ${localStorage.getItem('token2')}`
     });
 
     this.http.post('http://localhost:8000/api/customer/logout', { headers: headers });
-    localStorage.removeItem('token');
-    localStorage.removeItem('pass');
+    localStorage.removeItem('token2');
+    localStorage.removeItem('pass2');
     this.router.navigate(['/']);
   }
 
@@ -77,9 +77,10 @@ export class CustomerNavComponent {
 
   }
 
-  showRequest(email:any){
+  showRequest(id:any, email:any){
     this.router.navigateByUrl('/request/2').then(()=>{
       localStorage.setItem('email', email);
+      localStorage.setItem('requested_id', id);
       window.location.reload();
     });
   }
