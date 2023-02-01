@@ -10,6 +10,7 @@ use App\Http\Controllers\CustomerScheduleController;
 use App\Http\Controllers\CustomerFeedbackController;
 use App\Http\Controllers\TechnicianNotificationController;
 use App\Http\Controllers\MailBookingRequestController;
+use App\Http\Controllers\CustomerNotificationController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
@@ -77,7 +78,7 @@ Route::middleware('auth:sanctum')->group(function () {
 
 
 });
-
+Route::apiResource('customer-notification',CustomerNotificationController::class);
 Route::middleware(['auth:sanctum', 'email_verified'])->get('/user', function (Request $request) {
     return $request->user();
 });

@@ -7,6 +7,7 @@ use Illuminate\Notifications\Notifiable;
 use Laravel\Sanctum\HasApiTokens;
 use Illuminate\Database\Eloquent\Model;
 use App\Models\CustomerSchedule;
+use App\Models\CustomerNotification;
 
 class CustomerAccount extends Model
 {
@@ -46,6 +47,11 @@ class CustomerAccount extends Model
     public function schedule(){
         return $this->hasMany(CustomerSchedule::class);
     }
+
+    public function notifications(){
+        return $this->hasMany(CustomerNotification::class);
+    }
+
 
 
 
